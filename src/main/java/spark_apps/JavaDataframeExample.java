@@ -53,7 +53,7 @@ public class JavaDataframeExample {
         });
 
         //Dataset<Row> df = sparkSession.read().json("people.json");
-        Dataset<Row> df = sparkSession.read().schema(schema).csv("/Users/Jason/Desktop/spark_app/siri.20130101.csv")
+        Dataset<Row> df = sparkSession.read().schema(schema).csv("/media/spiros/Data/SparkDataset/")
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
@@ -63,7 +63,7 @@ public class JavaDataframeExample {
 
 //        df = df.withColumn( "delay", df.col("delay").cast(FloatType));
 //        df = df.withColumn( "delay", df.col("delay").cast(FloatType));
-        df.show(5);
+        //df.show(5);
 //        df.filter(df.col("lineID").equalTo("40")).filter(df.col("vehicleID").equalTo(33142)).sort("timestamp").show(30);//show(30);
         //df.agg(min("delay")).show();
 
@@ -87,18 +87,12 @@ public class JavaDataframeExample {
 //        Dataset<Row> sqlDF = sparkSession.sql("SELECT * FROM people");
 //        sqlDF.show();
         Queries queries = new Queries(df);
-        queries.stopsPerLine();
+        System.out.println("QUERY #1");
+        //queries.busesPerArea();
+        System.out.println("QUERY #2");
 
-        double minLongitude = (double) df.agg(min("longitude")).collectAsList().get(0).get(0);
-        double maxLongitude = (double) df.agg(max("longitude")).collectAsList().get(0).get(0);
-        double minLatitude = (double) df.agg(min("latitude")).collectAsList().get(0).get(0);
-        double maxLatitude = (double) df.agg(max("latitude")).collectAsList().get(0).get(0);
-
-
-        System.out.println(""+minLongitude);
-        System.out.println(""+maxLongitude);
-        System.out.println(""+minLatitude);
-        System.out.println(""+maxLatitude);
+        System.out.println("QUERY #3");
+        //queries.stopsPerLine();
 
     }
     }
