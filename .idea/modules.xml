@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dslab.iml" filepath="$PROJECT_DIR$/.idea/modules/Dslab.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sparkturorial-build.iml" filepath="$PROJECT_DIR$/.idea/modules/sparkturorial-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spark-server-build.iml" filepath="$PROJECT_DIR$/.idea/modules/spark-server-build.iml" />
     </modules>
   </component>
 </project>
