@@ -10,6 +10,7 @@ import java.util.Set;
 
 import static org.apache.spark.sql.functions.max;
 import static org.apache.spark.sql.functions.min;
+import static org.apache.spark.sql.functions.from_unixtime;
 
 public class Queries {
     Dataset<Row> df;
@@ -54,6 +55,11 @@ public class Queries {
         System.out.println(map.toString());
 
 
+        return null;
+    }
+
+    public String busesAtStopBatch(){
+        df.filter(df.col("atStop").equalTo(1)).groupBy("timeFrame", "Hour", "stopID", "lineID").count().sort("timeFrame","Hour").show(50);
         return null;
     }
 }

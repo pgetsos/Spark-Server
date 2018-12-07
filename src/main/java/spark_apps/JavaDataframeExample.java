@@ -12,11 +12,11 @@ import org.apache.spark.sql.types.Metadata;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import static org.apache.spark.sql.functions.*;
-import static org.apache.spark.sql.types.DataTypes.DateType;
-import static org.apache.spark.sql.types.DataTypes.FloatType;
+import static org.apache.spark.sql.types.DataTypes.*;
 
 
 public class JavaDataframeExample {
@@ -33,6 +33,7 @@ public class JavaDataframeExample {
         JavaSparkContext sc = new JavaSparkContext(conf);
         SparkSession sparkSession = SparkSession.builder().sparkContext(sc.sc()).getOrCreate();
         //sc.setCheckpointDir("file:///home/stathis/datasets/checkpoint/");
+
 
         StructType schema = new StructType(new StructField[]{
                 new StructField("timestamp", DataTypes.LongType, false, Metadata.empty()),
@@ -56,6 +57,11 @@ public class JavaDataframeExample {
         Dataset<Row> df = sparkSession.read().schema(schema).csv("/media/spiros/Data/SparkDataset/")
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
+
+
+
+        df = df.withColumn("DateTime", from_unixtime(df.col("timestamp").divide(lit(1000000L))));
+        df = df.withColumn("Hour", hour(df.col("DateTime")));
 
 
 
@@ -93,6 +99,10 @@ public class JavaDataframeExample {
 
         System.out.println("QUERY #3");
         //queries.stopsPerLine();
+        //df.show();
+        System.out.println("QUERY #4");
+
+        queries.busesAtStopBatch();
 
     }
     }
