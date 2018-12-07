@@ -1,15 +1,15 @@
 
-<squid:S1481"(Remove this unused "df3" local variable.(÷ù°d
-Bsquid:S1481"(Remove this unused "df1" local variable.(ÜØéãˇˇˇˇˇ
-=squid:S1481"(Remove this unused "df4" local variable.(„ı€ø
-Bsquid:S1481"(Remove this unused "df2" local variable.(ﬂ ïÕ˝ˇˇˇˇ
-dsquid:S1192"JDefine a constant instead of duplicating this literal "vehicleID" 4 times.(ÜØéãˇˇˇˇˇ
-Qsquid:S1854"7Remove this useless assignment to local variable "df2".(ﬂ ïÕ˝ˇˇˇˇ
-^squid:S1192"IDefine a constant instead of duplicating this literal "latitude" 6 times.(À†©µ
-esquid:S1192"KDefine a constant instead of duplicating this literal "timeFrame" 12 times.(ÜØéãˇˇˇˇˇ
-Qsquid:S1854"7Remove this useless assignment to local variable "df1".(ÜØéãˇˇˇˇˇ
-Ksquid:S1854"7Remove this useless assignment to local variable "df3".(÷ù°d
-_squid:S1192"JDefine a constant instead of duplicating this literal "longitude" 6 times.(Çò·Ó
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ã‰„€˛ˇˇˇˇ
-Lsquid:S1854"7Remove this useless assignment to local variable "df4".(„ı€ø
+esquid:S1192+"GDefine a constant instead of duplicating this literal "atStop" 4 times.(Û°∑Í8ü‘ÈÕ¯,
+Dsquid:S1481"(Remove this unused "df1" local variable.(ÜØéãˇˇˇˇˇ
+gsquid:S1192"KDefine a constant instead of duplicating this literal "timeFrame" 16 times.(ÜØéãˇˇˇˇˇ
+fsquid:S1192"JDefine a constant instead of duplicating this literal "vehicleID" 4 times.(ÜØéãˇˇˇˇˇ
+nsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(∞¿èÖ˘ˇˇˇˇ8ü‘ÈÕ¯,
+Ssquid:S1854"7Remove this useless assignment to local variable "df1".(ÜØéãˇˇˇˇˇ
+Dsquid:S1481 "(Remove this unused "df2" local variable.(ﬂ ïÕ˝ˇˇˇˇ
+?squid:S1481""(Remove this unused "df4" local variable.(„ı€ø
+Msquid:S1854!"7Remove this useless assignment to local variable "df3".(÷ù°d
+asquid:S1192"JDefine a constant instead of duplicating this literal "longitude" 8 times.(Çò·Ó
+`squid:S1192"IDefine a constant instead of duplicating this literal "latitude" 8 times.(À†©µ
+Ssquid:S1854 "7Remove this useless assignment to local variable "df2".(ﬂ ïÕ˝ˇˇˇˇ
+>squid:S1481!"(Remove this unused "df3" local variable.(÷ù°d
+Nsquid:S1854""7Remove this useless assignment to local variable "df4".(„ı€ø

@@ -1,21 +1,18 @@
 
-M
-squid:S106"9Replace this use of System.out or System.err by a logger.(œâ
-Usquid:S1854";Remove this useless assignment to local variable "queries".(Ïùë¤ÿÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¶ŸµÌÿÿÿÿÿ
-Rsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Â¤D
-Fsquid:S1481",Remove this unused "queries" local variable.(Ïùë¤ÿÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ò–ğÁ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Í¶šúÿÿÿÿ
-M
-squid:S106"9Replace this use of System.out or System.err by a logger.(ŸÒ›È
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(œ‰­èùÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¨…¿Ñúÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ñÍ¼ùÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ùÈ•Â
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¼óİË
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ºçÇÂùÿÿÿÿ
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(åËÚü
-`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(´¶ß§
+hsquid:S11920"JDefine a constant instead of duplicating this literal "timestamp" 3 times.(›ÖÏ¯8ÔéÍø,
+bsquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(åËÚü
+gsquid:CommentedOutCodeLineC"<This block of commented-out lines of code should be removed.(ñÍ¼ùÿÿÿÿ
+bsquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(´¶ß§
+Usquid:S1481#"2Remove this unused "finishedQuery" local variable.(×È˜ÿÿÿÿÿ8—ôäÑø,
+\squid:UselessImportCheck"1Remove this unused import 'java.math.BigInteger'.(»Çâ€8ÔéÍø,
+dsquid:S1854#"ARemove this useless assignment to local variable "finishedQuery".(×È˜ÿÿÿÿÿ8—ôäÑø,
+bsquid:CommentedOutCodeLineR"<This block of commented-out lines of code should be removed.(ùÈ•Â
+gsquid:S1192H"IDefine a constant instead of duplicating this literal " seconds" 4 times.(ÑÙÓÈ8Ñ®³Ñø,
+gsquid:CommentedOutCodeLinef"<This block of commented-out lines of code should be removed.(¶ŸµÌÿÿÿÿÿ
+bsquid:CommentedOutCodeLinei"<This block of commented-out lines of code should be removed.(¼óİË
+Tsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+asquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(Â¤D
+bsquid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(Ò–ğÁ
+nsquid:CommentedOutCodeLinez"<This block of commented-out lines of code should be removed.(¼ë Äûÿÿÿÿ8ÔéÍø,
+gsquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(œ‰­èùÿÿÿÿ
+qsquid:S2095*"NUse try-with-resources or close this "JavaSparkContext" in a "finally" clause.(¸á‚Ğùÿÿÿÿ8ÔéÍø,

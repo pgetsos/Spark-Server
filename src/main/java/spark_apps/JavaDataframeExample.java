@@ -1,5 +1,6 @@
 package spark_apps;
 
+import javassist.bytecode.stackmap.TypeData;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
@@ -12,18 +13,26 @@ import org.apache.spark.sql.types.Metadata;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
 
-import java.math.BigInteger;
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 import static org.apache.spark.sql.functions.*;
-import static org.apache.spark.sql.types.DataTypes.*;
 
 
 public class JavaDataframeExample {
 
+    private static final Logger LOGGER = Logger.getLogger(TypeData.ClassName.class.getName());
 
     public static void main(String[] args) {
+        /*
+          Level.INFO is the default. Use LOGGER.info to log things we always want to show, LOGGER.debug to show things
+          while debugging e.g. results of a loop, LOGGER.warn to show ONLY things you want without all the rest
+          cluttering everything (and change the below to Level.WARN). Level.OFF disables all logs (not Spark prints).
+         */
+        LOGGER.setLevel(Level.WARN);
 
+        final String finishedQuery = "QUERY #%d complete in %d seconds";
 
         Logger.getLogger("org").setLevel(Level.OFF);
         Logger.getLogger("akka").setLevel(Level.OFF);
@@ -53,68 +62,68 @@ public class JavaDataframeExample {
                 new StructField("atStop", DataTypes.IntegerType, true, Metadata.empty())
         });
 
-        System.out.println("Loading data...");
+        LOGGER.info("Loading data...");
         long start = System.currentTimeMillis();
-        //Dataset<Row> df = sparkSession.read().json("people.json");
+
         Dataset<Row> df = sparkSession.read().schema(schema).csv("C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113")
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
-        long end = System.currentTimeMillis();
-        System.out.println("Load complete in "+ (end - start)/1000 +" seconds");
 
+        long end = System.currentTimeMillis();
+        LOGGER.info("Load complete in "+ (end - start)/1000 +" seconds");
 
         df = df.withColumn("DateTime", from_unixtime(df.col("timestamp").divide(lit(1000000L))));
         df = df.withColumn("Hour", hour(df.col("DateTime")));
 
-
-
-        df.printSchema();
-
-//        df = df.withColumn( "delay", df.col("delay").cast(FloatType));
-//        df = df.withColumn( "delay", df.col("delay").cast(FloatType));
-        //df.show(5);
-//        df.filter(df.col("lineID").equalTo("40")).filter(df.col("vehicleID").equalTo(33142)).sort("timestamp").show(30);//show(30);
-        //df.agg(min("delay")).show();
-
-// Print the schema in a tree format
-        //df.printSchema();
-
-//// Select only the "name" column
-//        df.select("name").show();
-//
-//
-//// Select everybody, but increment the age by 1
-//        df.select(df.col("name"), df.col("age").plus(1)).show();
-//
-//
-//// Select people older than 21
-//        df.filter(df.col("age").gt(21)).show();
-//
-//        df.groupBy("age").count().show();
-//        df.createOrReplaceTempView("people");
-//
-//        Dataset<Row> sqlDF = sparkSession.sql("SELECT * FROM people");
-//        sqlDF.show();
         Queries queries = new Queries(df);
-        System.out.println("QUERY #1");
-        start = System.currentTimeMillis();
-        queries.busesPerArea();
-        end = System.currentTimeMillis();
-        System.out.println("QUERY #1 complete in "+ (end - start)/1000 +" seconds");
-        System.out.println("QUERY #2");
 
-        System.out.println("QUERY #3");
+        boolean run = true;
+        while(run) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Choose a query:\n0) Print schema\n1) Buses per Area\n2) \n3) Stops per line\n" +
+                    "4) Buses at Stop\n5) Buses at Stop in Area\n6) \n9) Exit");
+            int a;
+            try {
+                a = Integer.parseInt(br.readLine());
+            } catch (IOException e) {
+                System.out.println("Wrong input, please try again");
+                continue;
+            }
+            start = System.currentTimeMillis();
+            switch (a){
+                case 0:
+                    df.printSchema();
+                    continue;
+                case 1:
+                    queries.busesPerArea();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    queries.stopsPerLine();
+                    break;
+                case 4:
+                    queries.busesAtStopBatch();
+                    break;
+                case 5:
+                    queries.busesAtStopInAreaBatch(53.295563, -6.323346, 53.416634, -6.297);
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 9:
+                    run = false;
+                    continue;
+                default:
+                    System.out.println("Wrong input, please try again");
+                    break;
+            }
+            end = System.currentTimeMillis();
+            LOGGER.info(String.format(finishedQuery, a, (end - start) / 1000));
 
-        start = System.currentTimeMillis();
-        queries.stopsPerLine();
-        end = System.currentTimeMillis();
-        System.out.println("QUERY #3 complete in "+ (end - start)/1000 +" seconds");
-
-        //df.show();
-        System.out.println("QUERY #4");
-
-        queries.busesAtStopBatch();
+        }
 
 
     }
-    }
+}

@@ -10,38 +10,40 @@ import java.util.Set;
 
 import static org.apache.spark.sql.functions.max;
 import static org.apache.spark.sql.functions.min;
-import static org.apache.spark.sql.functions.from_unixtime;
 
-public class Queries {
-    Dataset<Row> df;
-    public Queries(Dataset<Row> df){
+class Queries {
+
+	private static final String TIMEFRAME = "timeFrame";
+	private static final String LAT = "latitude";
+	private static final String LONG = "longitude";
+	private static final String VEHICLE_ID = "vehicleID";
+	private static final String AT_STOP = "atStop";
+    private Dataset<Row> df;
+
+    Queries(Dataset<Row> df){
         this.df=df;
     }
 
-    public String busesPerArea(){
+    void busesPerArea(){
 
-        double minLongitude = (double) df.agg(min("longitude")).collectAsList().get(0).get(0);
-        double maxLongitude = (double) df.agg(max("longitude")).collectAsList().get(0).get(0);
-        double minLatitude = (double) df.agg(min("latitude")).collectAsList().get(0).get(0);
-        double maxLatitude = (double) df.agg(max("latitude")).collectAsList().get(0).get(0);
+	    @SuppressWarnings("Duplicates")
+        double minLongitude = (double) df.agg(min(LONG)).collectAsList().get(0).get(0);
+        double maxLongitude = (double) df.agg(max(LONG)).collectAsList().get(0).get(0);
+        double minLatitude = (double) df.agg(min(LAT)).collectAsList().get(0).get(0);
+        double maxLatitude = (double) df.agg(max(LAT)).collectAsList().get(0).get(0);
 
         double midLongitude = (minLongitude + maxLongitude) / 2;
         double midLatitude = (minLatitude + maxLatitude) / 2;
 
-        Dataset<Row> df1 = df.filter(df.col("latitude").gt(midLatitude).and(df.col("longitude").gt(midLongitude))).dropDuplicates("vehicleID", "timeFrame").sort("timeFrame").groupBy("timeFrame").count();
-        Dataset<Row> df2 = df.filter(df.col("latitude").lt(midLatitude).and(df.col("longitude").lt(midLongitude))).dropDuplicates("vehicleID", "timeFrame").sort("timeFrame").groupBy("timeFrame").count();
-        Dataset<Row> df3 = df.filter(df.col("latitude").gt(midLatitude).and(df.col("longitude").lt(midLongitude))).dropDuplicates("vehicleID", "timeFrame").sort("timeFrame").groupBy("timeFrame").count();
-        Dataset<Row> df4 = df.filter(df.col("latitude").lt(midLatitude).and(df.col("longitude").gt(midLongitude))).dropDuplicates("vehicleID", "timeFrame").sort("timeFrame").groupBy("timeFrame").count();
-
-
-
-        return null;
+        Dataset<Row> df1 = df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).gt(midLongitude))).dropDuplicates(VEHICLE_ID, TIMEFRAME).sort(TIMEFRAME).groupBy(TIMEFRAME).count();
+        Dataset<Row> df2 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(VEHICLE_ID, TIMEFRAME).sort(TIMEFRAME).groupBy(TIMEFRAME).count();
+        Dataset<Row> df3 = df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(VEHICLE_ID, TIMEFRAME).sort(TIMEFRAME).groupBy(TIMEFRAME).count();
+        Dataset<Row> df4 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).gt(midLongitude))).dropDuplicates(VEHICLE_ID, TIMEFRAME).sort(TIMEFRAME).groupBy(TIMEFRAME).count();
     }
 
-    static Map<String, Set<Integer>> map = new HashMap<>();
-    public String stopsPerLine(){
-
-        df.dropDuplicates("lineID", "stopID", "atStop").filter(df.col("atStop").equalTo(1)).foreach(row -> {
+    private static Map<String, Set<Integer>> map = new HashMap<>();
+    void stopsPerLine(){
+        df.dropDuplicates("lineID", "stopID", AT_STOP).filter(df.col(AT_STOP).equalTo(1)).foreach(row -> {
             if(map.containsKey(row.getString(1))){
                 Set<Integer> tempSet = map.get(row.getString(1));
                 tempSet.add(row.getInt(13));
@@ -53,13 +55,16 @@ public class Queries {
             }
         });
         //System.out.println(map.toString());
-
-
-        return null;
     }
 
-    public String busesAtStopBatch(){
-        df.filter(df.col("atStop").equalTo(1)).groupBy("timeFrame", "Hour", "stopID", "lineID").count().sort("timeFrame","Hour").show(50);
-        return null;
+    void busesAtStopBatch(){
+        df.filter(df.col(AT_STOP).equalTo(1)).groupBy(TIMEFRAME, "Hour", "stopID", "lineID").count().sort(TIMEFRAME,"Hour").show(50);
+    }
+
+    void busesAtStopInAreaBatch(double minLatitude, double minLongitude, double maxLatitude, double maxLongitude){
+        df.filter(df.col(AT_STOP).equalTo(1)
+                .and(df.col(LAT).gt(minLatitude)).and(df.col(LONG).gt(minLongitude))
+                .and(df.col(LAT).lt(maxLatitude)).and(df.col(LONG).lt(maxLongitude)))
+                .groupBy(TIMEFRAME, "Hour").count().sort(TIMEFRAME,"Hour").show();
     }
 }
