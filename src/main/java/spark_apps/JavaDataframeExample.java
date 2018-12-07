@@ -52,11 +52,14 @@ public class JavaDataframeExample {
                 new StructField("atStop", DataTypes.IntegerType, true, Metadata.empty())
         });
 
+        System.out.println("Loading data...");
+        long start = System.currentTimeMillis();
         //Dataset<Row> df = sparkSession.read().json("people.json");
-        Dataset<Row> df = sparkSession.read().schema(schema).csv("/media/spiros/Data/SparkDataset/")
+        Dataset<Row> df = sparkSession.read().schema(schema).csv("C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113")
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
-
+        long end = System.currentTimeMillis();
+        System.out.println("Load complete in "+ (end - start)/1000 +" seconds");
 
 
         df.printSchema();
@@ -88,11 +91,17 @@ public class JavaDataframeExample {
 //        sqlDF.show();
         Queries queries = new Queries(df);
         System.out.println("QUERY #1");
-        //queries.busesPerArea();
+        start = System.currentTimeMillis();
+        queries.busesPerArea();
+        end = System.currentTimeMillis();
+        System.out.println("QUERY #1 complete in "+ (end - start)/1000 +" seconds");
         System.out.println("QUERY #2");
 
         System.out.println("QUERY #3");
-        //queries.stopsPerLine();
+        start = System.currentTimeMillis();
+        queries.stopsPerLine();
+        end = System.currentTimeMillis();
+        System.out.println("QUERY #3 complete in "+ (end - start)/1000 +" seconds");
 
     }
     }

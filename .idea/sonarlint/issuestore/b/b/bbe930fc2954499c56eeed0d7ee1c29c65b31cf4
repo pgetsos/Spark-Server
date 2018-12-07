@@ -1,0 +1,15 @@
+
+<squid:S1481"(Remove this unused "df3" local variable.(Ö¡d
+Bsquid:S1481"(Remove this unused "df1" local variable.(†¯Ž‹ÿÿÿÿÿ
+=squid:S1481"(Remove this unused "df4" local variable.(ãõÛ¿
+Bsquid:S1481"(Remove this unused "df2" local variable.(ßÊ•Íýÿÿÿÿ
+dsquid:S1192"JDefine a constant instead of duplicating this literal "vehicleID" 4 times.(†¯Ž‹ÿÿÿÿÿ
+Qsquid:S1854"7Remove this useless assignment to local variable "df2".(ßÊ•Íýÿÿÿÿ
+^squid:S1192"IDefine a constant instead of duplicating this literal "latitude" 6 times.(Ë ©µ
+esquid:S1192"KDefine a constant instead of duplicating this literal "timeFrame" 12 times.(†¯Ž‹ÿÿÿÿÿ
+Qsquid:S1854"7Remove this useless assignment to local variable "df1".(†¯Ž‹ÿÿÿÿÿ
+Ksquid:S1854"7Remove this useless assignment to local variable "df3".(Ö¡d
+_squid:S1192"JDefine a constant instead of duplicating this literal "longitude" 6 times.(‚˜áî
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÌäãÛþÿÿÿÿ
+Lsquid:S1854"7Remove this useless assignment to local variable "df4".(ãõÛ¿

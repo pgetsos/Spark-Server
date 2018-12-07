@@ -51,7 +51,7 @@ public class Queries {
                 map.put(row.getString(1), tempSet);
             }
         });
-        System.out.println(map.toString());
+        //System.out.println(map.toString());
 
 
         return null;
