@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" line="13" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" line="14" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92f308c-3bda-46ba-a36a-baff32cbcf67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_11_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_11_8_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Dslab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Dslab.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/spark-server-build.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spark_apps/JavaDataframeExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spark_apps/JavaDataframeExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" afterDir="false" />
     </list>
@@ -42,10 +35,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/JavaDataframeExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="100" column="41" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
+            <state relative-caret-position="-92">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#main#0;class#JavaDataframeExample#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,11 +65,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+            <state relative-caret-position="345">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#429#430#0" expanded="true" />
+                <element signature="e#455#456#0" expanded="true" />
                 <element signature="method#busesPerArea#0;class#Queries#0" expanded="true" />
+                <element signature="method#stopsPerLine#0;class#Queries#0" expanded="true" />
+                <element signature="method#busesAtStopBatch#0;class#Queries#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,7 +172,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544171855792" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544171917021" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -314,15 +311,16 @@
       <workItem from="1542455914178" duration="6496000" />
       <workItem from="1544165928859" duration="231000" />
       <workItem from="1544166192206" duration="907000" />
-      <workItem from="1544168584239" duration="2467000" />
+      <workItem from="1544168584239" duration="3277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12562000" />
+    <option name="totallyTimeSpent" value="13372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2208" height="1248" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18046512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -440,21 +438,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+        <state relative-caret-position="345">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
             <element signature="method#busesPerArea#0;class#Queries#0" expanded="true" />
+            <element signature="method#stopsPerLine#0;class#Queries#0" expanded="true" />
+            <element signature="method#busesAtStopBatch#0;class#Queries#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.2-sources.jar!/org/apache/spark/sql/functions.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="2690" column="6" selection-start-line="2690" selection-start-column="6" selection-end-line="2690" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/JavaDataframeExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="100" column="41" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
+        <state relative-caret-position="-92">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#JavaDataframeExample#0" expanded="true" />
           </folding>
         </state>
       </provider>
