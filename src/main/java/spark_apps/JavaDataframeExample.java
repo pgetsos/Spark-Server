@@ -30,7 +30,7 @@ public class JavaDataframeExample {
           while debugging e.g. results of a loop, LOGGER.warn to show ONLY things you want without all the rest
           cluttering everything (and change the below to Level.WARN). Level.OFF disables all logs (not Spark prints).
          */
-        LOGGER.setLevel(Level.WARN);
+        LOGGER.setLevel(Level.INFO);
 
         final String finishedQuery = "QUERY #%d complete in %d seconds";
 
@@ -65,14 +65,19 @@ public class JavaDataframeExample {
         LOGGER.info("Loading data...");
         long start = System.currentTimeMillis();
 
-        Dataset<Row> df = sparkSession.read().schema(schema).csv("C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113")
+        String path = "C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113"; // Petros
+        String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
+
+        Dataset<Row> df = sparkSession.read().schema(schema).csv(path2)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
         long end = System.currentTimeMillis();
         LOGGER.info("Load complete in "+ (end - start)/1000 +" seconds");
 
-        df = df.withColumn("DateTime", from_unixtime(df.col("timestamp").divide(lit(1000000L))));
+        df = df.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(df.col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
+        //df = df.withColumn("DateTime", datenew java.util.Date((long) Long.valueOf(df.col("timestamp").divide(lit(1000000L)).toString())));
+        df = df.withColumn("Date", date_format(df.col("DateTime"), "yyyy-MM-dd"));
         df = df.withColumn("Hour", hour(df.col("DateTime")));
 
         Queries queries = new Queries(df);
@@ -109,6 +114,7 @@ public class JavaDataframeExample {
                     queries.busesAtStopInAreaBatch(53.295563, -6.323346, 53.416634, -6.297);
                     break;
                 case 6:
+                    queries.timeToStop("15","2013-01-13",1144);
                     break;
                 case 7:
                     break;
