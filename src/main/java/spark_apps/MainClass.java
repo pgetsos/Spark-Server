@@ -20,7 +20,7 @@ import java.io.InputStreamReader;
 import static org.apache.spark.sql.functions.*;
 
 
-public class JavaDataframeExample {
+public class MainClass {
 
     private static final Logger LOGGER = Logger.getLogger(TypeData.ClassName.class.getName());
 
@@ -41,8 +41,6 @@ public class JavaDataframeExample {
         conf.setMaster("local[*]");
         JavaSparkContext sc = new JavaSparkContext(conf);
         SparkSession sparkSession = SparkSession.builder().sparkContext(sc.sc()).getOrCreate();
-        //sc.setCheckpointDir("file:///home/stathis/datasets/checkpoint/");
-
 
         StructType schema = new StructType(new StructField[]{
                 new StructField("timestamp", DataTypes.LongType, false, Metadata.empty()),
