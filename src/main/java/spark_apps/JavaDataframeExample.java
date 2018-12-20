@@ -66,7 +66,7 @@ public class JavaDataframeExample {
         String path = "C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113"; // Petros
         String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
 
-        Dataset<Row> df = sparkSession.read().schema(schema).csv(path)
+        Dataset<Row> df = sparkSession.read().schema(schema).csv(path2)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
@@ -76,6 +76,8 @@ public class JavaDataframeExample {
         df = df.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(df.col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
         df = df.withColumn("Date", date_format(df.col("DateTime"), "yyyy-MM-dd"));
         df = df.withColumn("Hour", hour(df.col("DateTime")));
+
+        df.show(2);
 
         Queries queries = new Queries(df);
 
@@ -100,15 +102,48 @@ public class JavaDataframeExample {
                     queries.busesPerArea();
                     break;
                 case 2:
+                    queries.congestedBuses();
                     break;
                 case 3:
                     queries.stopsPerLine();
                     break;
                 case 4:
-                    queries.busesAtStopBatch();
+
+                    try {
+                        System.out.println("Choose a date (YYYY-MM-DD format)");
+                        String date = br.readLine();
+                        System.out.println("Choose Hour");
+                        int hour = Integer.parseInt(br.readLine());
+                        System.out.println("Choose a stopID");
+                        int stopID = Integer.parseInt(br.readLine());
+                        queries.busesAtStopBatch(date, hour, stopID);
+                        //queries.timeToStop("38","2013-01-06",794);
+                    } catch (IOException e) {
+                        System.out.println("Wrong input, please try again");
+                        continue;
+                    }
                     break;
                 case 5:
-                    queries.busesAtStopInAreaBatch(53.295563, -6.323346, 53.416634, -6.297);
+                    try {
+                        System.out.println("Choose minimum latitude");
+                        double minlat = Double.parseDouble(br.readLine());
+                        System.out.println("Choose maximum latitude");
+                        double maxlat = Double.parseDouble(br.readLine());
+
+                        System.out.println("Choose minimum longitude");
+                        double minlon = Double.parseDouble(br.readLine());
+                        System.out.println("Choose maximum longitude");
+                        double maxlon = Double.parseDouble(br.readLine());
+
+                        queries.busesAtStopInAreaBatch(minlat, minlon, maxlat, maxlon);
+
+
+                    } catch (IOException e) {
+                        System.out.println("Wrong input, please try again");
+                        continue;
+                    }
+
+
                     break;
                 case 6:
                     try {
@@ -118,8 +153,7 @@ public class JavaDataframeExample {
                         String date = br.readLine();
                         System.out.println("Choose a stopID");
                         int stopID = Integer.parseInt(br.readLine());
-                        //queries.timeToStop(lineID, date,stopID);
-                        queries.timeToStop("15","2013-01-13",1144);
+                        queries.timeToStop(lineID, date,stopID);
                     } catch (IOException e) {
                         System.out.println("Wrong input, please try again");
                         continue;
