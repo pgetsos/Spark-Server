@@ -63,12 +63,18 @@ class Queries {
         double midLongitude = (minLongitude + maxLongitude) / 2;
         double midLatitude = (minLatitude + maxLatitude) / 2;
 
-        /*int avg1 = (int)*/ df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).gt(midLongitude))).groupBy(DATE, HOUR).count().show(30);
 
-        df.filter(df.col(CONGESTION).equalTo(1))/*.dropDuplicates(VEHICLE_ID, DATE)*/.sort(DATE).groupBy(DATE, HOUR).count().show();
-        //Dataset<Row> df2 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(VEHICLE_ID, DATE).sort(DATE).groupBy(DATE).count();
-        //Dataset<Row> df3 = df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(VEHICLE_ID, DATE).sort(DATE).groupBy(DATE).count();
-        //Dataset<Row> df4 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).gt(midLongitude))).dropDuplicates(VEHICLE_ID, DATE).sort(DATE).groupBy(DATE).count();
+        //Average calculation(Area 1)-Number
+        /*Dates in "" are just placeholder*/
+        int y=(int)df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).gt(midLongitude)).and(df.col(DATE).geq("2013-01-01")).and(df.col(DATE).leq("2013-01-15"))/*.and(df.col(DATE).leq(2013-01-15))*/).dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).count();
+        System.out.println(y);
+
+        int x=(int)df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(HOUR, DATE).sort(DATE).count();
+        System.out.println(x);
+
+        float avgBusesPerHour = y/x;
+        System.out.println(avgBusesPerHour);
+
     }
 
     // Query #3

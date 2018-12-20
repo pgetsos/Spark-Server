@@ -65,8 +65,9 @@ public class JavaDataframeExample {
 
         String path = "C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113"; // Petros
         String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
+        String path3 = "/Users/jason/Desktop/default/"; // Iasonas
 
-        Dataset<Row> df = sparkSession.read().schema(schema).csv(path2)
+        Dataset<Row> df = sparkSession.read().schema(schema).csv(path3)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
@@ -84,7 +85,7 @@ public class JavaDataframeExample {
         boolean run = true;
         while(run) {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Choose a query:\n0) Print schema\n1) Buses per Area\n2) \n3) Stops per line\n" +
+            System.out.println("Choose a query:\n0) Print schema\n1) Buses per Area\n2) Congested Buses per Day per Hour\n3) Stops per line\n" +
                     "4) Buses at Stop\n5) Buses at Stop in Area\n6) Time to Stop\n9) Exit");
             int a;
             try {
