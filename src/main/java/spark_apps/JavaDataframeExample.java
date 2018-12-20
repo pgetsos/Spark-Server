@@ -20,7 +20,7 @@ import java.io.InputStreamReader;
 import static org.apache.spark.sql.functions.*;
 
 
-public class MainClass {
+public class JavaDataframeExample {
 
     private static final Logger LOGGER = Logger.getLogger(TypeData.ClassName.class.getName());
 
@@ -66,7 +66,7 @@ public class MainClass {
         String path = "C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113"; // Petros
         String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
 
-        Dataset<Row> df = sparkSession.read().schema(schema).csv(path2)
+        Dataset<Row> df = sparkSession.read().schema(schema).csv(path)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
@@ -74,7 +74,6 @@ public class MainClass {
         LOGGER.info("Load complete in "+ (end - start)/1000 +" seconds");
 
         df = df.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(df.col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
-        //df = df.withColumn("DateTime", datenew java.util.Date((long) Long.valueOf(df.col("timestamp").divide(lit(1000000L)).toString())));
         df = df.withColumn("Date", date_format(df.col("DateTime"), "yyyy-MM-dd"));
         df = df.withColumn("Hour", hour(df.col("DateTime")));
 
@@ -84,7 +83,7 @@ public class MainClass {
         while(run) {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Choose a query:\n0) Print schema\n1) Buses per Area\n2) \n3) Stops per line\n" +
-                    "4) Buses at Stop\n5) Buses at Stop in Area\n6) \n9) Exit");
+                    "4) Buses at Stop\n5) Buses at Stop in Area\n6) Time to Stop\n9) Exit");
             int a;
             try {
                 a = Integer.parseInt(br.readLine());
@@ -112,7 +111,19 @@ public class MainClass {
                     queries.busesAtStopInAreaBatch(53.295563, -6.323346, 53.416634, -6.297);
                     break;
                 case 6:
-                    queries.timeToStop("15","2013-01-13",1144);
+                    try {
+                        System.out.println("Choose lineID");
+                        String lineID = br.readLine();
+                        System.out.println("Choose a date (YYYY-MM-DD format)");
+                        String date = br.readLine();
+                        System.out.println("Choose a stopID");
+                        int stopID = Integer.parseInt(br.readLine());
+                        //queries.timeToStop(lineID, date,stopID);
+                        queries.timeToStop("15","2013-01-13",1144);
+                    } catch (IOException e) {
+                        System.out.println("Wrong input, please try again");
+                        continue;
+                    }
                     break;
                 case 7:
                     break;

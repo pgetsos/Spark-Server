@@ -1,15 +1,12 @@
 
-esquid:S1192+"GDefine a constant instead of duplicating this literal "atStop" 4 times.(ó¡·ê8ŸÔéÍø,
-Dsquid:S1481"(Remove this unused "df1" local variable.(†¯‹ÿÿÿÿÿ
-gsquid:S1192"KDefine a constant instead of duplicating this literal "timeFrame" 16 times.(†¯‹ÿÿÿÿÿ
-fsquid:S1192"JDefine a constant instead of duplicating this literal "vehicleID" 4 times.(†¯‹ÿÿÿÿÿ
-nsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(°À…ùÿÿÿÿ8ŸÔéÍø,
-Ssquid:S1854"7Remove this useless assignment to local variable "df1".(†¯‹ÿÿÿÿÿ
-Dsquid:S1481 "(Remove this unused "df2" local variable.(ßÊ•Íıÿÿÿÿ
-?squid:S1481""(Remove this unused "df4" local variable.(ãõÛ¿
-Msquid:S1854!"7Remove this useless assignment to local variable "df3".(Ö¡d
-asquid:S1192"JDefine a constant instead of duplicating this literal "longitude" 8 times.(‚˜áî
-`squid:S1192"IDefine a constant instead of duplicating this literal "latitude" 8 times.(Ë ©µ
-Ssquid:S1854 "7Remove this useless assignment to local variable "df2".(ßÊ•Íıÿÿÿÿ
->squid:S1481!"(Remove this unused "df3" local variable.(Ö¡d
-Nsquid:S1854""7Remove this useless assignment to local variable "df4".(ãõÛ¿
+jsquid:S1192."GDefine a constant instead of duplicating this literal "lineID" 3 times.(¸î¤êıÿÿÿÿ8ç¢ŠÅü,
+jsquid:S1192."GDefine a constant instead of duplicating this literal "stopID" 3 times.(¸î¤êıÿÿÿÿ8ç¢ŠÅü,
+nsquid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(°À…ùÿÿÿÿ8ç¢ŠÅü,
+Fsquid:S1481&"(Remove this unused "df1" local variable.(Ö½ƒ­8ç¢ŠÅü,
+Ksquid:S1481'"(Remove this unused "df2" local variable.(›¤‘›úÿÿÿÿ8ç¢ŠÅü,
+Fsquid:S1481("(Remove this unused "df3" local variable.(áºÇğ8ç¢ŠÅü,
+Ksquid:S1481)"(Remove this unused "df4" local variable.(­Ã”£ûÿÿÿÿ8ç¢ŠÅü,
+Zsquid:S1854)"7Remove this useless assignment to local variable "df4".(­Ã”£ûÿÿÿÿ8ç¢ŠÅü,
+Usquid:S1854("7Remove this useless assignment to local variable "df3".(áºÇğ8ç¢ŠÅü,
+Zsquid:S1854'"7Remove this useless assignment to local variable "df2".(›¤‘›úÿÿÿÿ8ç¢ŠÅü,
+Usquid:S1854&"7Remove this useless assignment to local variable "df1".(Ö½ƒ­8ç¢ŠÅü,
