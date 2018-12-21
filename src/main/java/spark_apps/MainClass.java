@@ -34,7 +34,7 @@ public class MainClass {
         Logger.getLogger("org").setLevel(Level.OFF);
         Logger.getLogger("akka").setLevel(Level.OFF);
         SparkConf conf = new SparkConf();
-        conf.setAppName("spark_apps.JavaDataframeExample");
+        conf.setAppName("spark_apps.MainClass");
         conf.setMaster("local[*]");
         JavaSparkContext sc = new JavaSparkContext(conf);
         SparkSession sparkSession = SparkSession.builder().sparkContext(sc.sc()).getOrCreate();

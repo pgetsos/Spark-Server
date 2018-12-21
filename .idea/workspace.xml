@@ -110,10 +110,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="1027" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="82" />
+    <option name="y" value="-9" />
+    <option name="width" value="646" />
+    <option name="height" value="559" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -172,7 +173,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545330396277" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545367443347" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -199,8 +200,8 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="JavaDataframeExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spark_apps.JavaDataframeExample" />
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spark_apps.MainClass" />
       <module name="Dslab" />
       <extension name="coverage">
         <pattern>
@@ -261,7 +262,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JavaDataframeExample" />
+        <item itemvalue="Application.MainClass" />
       </list>
     </recent_temporary>
   </component>
