@@ -87,32 +87,32 @@ class Queries {
         }
 
         Dataset<Row> df1 = busesOfArea1.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 1"));
-        //Dataset<Row> df2 = busesOfArea2.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 2"));
-        //Dataset<Row> df3 = busesOfArea3.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 3"));
-        //Dataset<Row> df4 = busesOfArea4.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 4"));
+        Dataset<Row> df2 = busesOfArea2.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 2"));
+        Dataset<Row> df3 = busesOfArea3.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 3"));
+        Dataset<Row> df4 = busesOfArea4.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 4"));
 
-        Dataset<Row> dfConcated = df1/*.union(df2).union(df3).union(df4)*/;
+        Dataset<Row> dfConcated = df1.union(df2).union(df3).union(df4);
 
         Dataset<Row> trained = dfConcated.select(avg("Count")); //FIXME ΜΕΧΡΙ ΕΔΩ δουλευει τελεια
         trained.show();
 
         //New Datasets so that we calculate them only once
         Dataset<Row> dfBusesAfterDateArea1 = busesOfArea1.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
-        //Dataset<Row> dfBusesAfterDateArea2 = busesOfArea2.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
-        //Dataset<Row> dfBusesAfterDateArea3 = busesOfArea3.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
-        //Dataset<Row> dfBusesAfterDateArea4 = busesOfArea4.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
+        Dataset<Row> dfBusesAfterDateArea2 = busesOfArea2.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
+        Dataset<Row> dfBusesAfterDateArea3 = busesOfArea3.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
+        Dataset<Row> dfBusesAfterDateArea4 = busesOfArea4.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
 
 
         // Eδω ΔΕΝ δουλευει κομπλε ΝΟΜΙΖΩ. Μαλλον τα equalTo αντι να παιρνουν πολλαπλα HOUR, Area για καθε γραμμη, παιρνουν
         // μονιμα την ιδια τιμη και αρα εχουμε μονο τα > καποια σταθερα ~ 600 λεοφωρεια. Δηλαδη βγαζει μονο τα groupBy
         // που εχουν πανω απο ~600 λεωφορεια ΝΟΜΙΖΩ
 
-        Dataset<Row> dfToCheck1 = dfBusesAfterDateArea1
-                .groupBy(HOUR, DATE, CONGESTION)
-                .count()
-                .withColumn("Area", lit("Area 1"))
-                .filter(col("Count").gt(trained.select("avg(Count)").first().getDouble(0)));
-                        //.and(col(CONGESTION).equalTo(1)));
+//        Dataset<Row> dfToCheck1 = dfBusesAfterDateArea1
+//                .groupBy(HOUR, DATE, CONGESTION)
+//                .count()
+//                .withColumn("Area", lit("Area 1"))
+//                .filter(col("Count").gt(trained.select("avg(Count)").first().getDouble(0)));
+//                        //.and(col(CONGESTION).equalTo(1)));
 
         /*Dataset<Row> dfToCheck2 = dfBusesAfterDateArea2.groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 2"))
                 .filter(col("Count").gt(trained.filter(trained.col(HOUR).equalTo(col(HOUR))
@@ -131,7 +131,34 @@ class Queries {
                         .and(dfBusesAfterDateArea1.col(DATE).equalTo(col(DATE))))
                         .groupBy(DATE, HOUR).count().first().getLong(2)));*/
 
-        dfToCheck1.summary().show();
+//        dfToCheck1.summary().show();
+
+        double average_buses = (double) trained.collectAsList().get(0).get(0);
+
+        System.out.println("AREA #1");
+        if (dfBusesAfterDateArea1.count() > average_buses){
+            dfBusesAfterDateArea1.filter(df.col(CONGESTION).equalTo(1)).groupBy(DATE,HOUR).count().show();
+        }
+
+        System.out.println("AREA #2");
+        if (dfBusesAfterDateArea2.count() > average_buses){
+            dfBusesAfterDateArea2.filter(df.col(CONGESTION).equalTo(1)).groupBy(DATE,HOUR).count().show();
+        }
+
+        System.out.println("AREA #3");
+        if (dfBusesAfterDateArea3.count() > average_buses){
+            dfBusesAfterDateArea3.filter(df.col(CONGESTION).equalTo(1)).groupBy(DATE,HOUR).count().show();
+        }
+
+        System.out.println("AREA #4");
+        if (dfBusesAfterDateArea4.count() > average_buses){
+            dfBusesAfterDateArea4.filter(df.col(CONGESTION).equalTo(1)).groupBy(DATE,HOUR).count().show();
+        }
+
+
+
+
+
     }
 
     // Query #3
