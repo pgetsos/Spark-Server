@@ -126,6 +126,18 @@ class Queries {
                         .groupBy(DATE, HOUR).count().first().getLong(2)));*/
 
         dfToCheck1.show(50);
+/*
+        //Average calculation(Area 1)-Number
+        *//*Dates in "" are just placeholder*//*
+        int y=(int)df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).gt(midLongitude)).and(df.col(DATE).geq("2013-01-01")).and(df.col(DATE).leq("2013-01-15"))*//*.and(df.col(DATE).leq(2013-01-15))*//*).dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).count();
+        System.out.println(y);
+
+        int x=(int)df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(HOUR, DATE).sort(DATE).count();
+        System.out.println(x);
+
+        float avgBusesPerHour = y/x;
+        System.out.println(avgBusesPerHour);
+*/
     }
 
     // Query #3
