@@ -62,7 +62,7 @@ public class MainClass {
 
         String path = "C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113"; // Petros
         String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
-        String path3 = "/Users/jason/Desktop/default/"; // Iasonas
+        String path3 = "/Users/jason/Desktop/dataset/"; // Iasonas
 
         Dataset<Row> df = sparkSession.read().schema(schema).csv(path3)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",

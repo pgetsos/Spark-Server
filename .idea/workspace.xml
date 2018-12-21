@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a92f308c-3bda-46ba-a36a-baff32cbcf67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_avro_avro_1_7_7_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_avro_avro_1_7_7_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_11_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_11_8_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Dslab-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Dslab-build.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Dslab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Dslab.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" afterDir="false" />
@@ -37,34 +33,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state relative-caret-position="421">
+              <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#JavaDataframeExample#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2599">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-              <folding>
-                <element signature="method#calculateMids#0;class#Queries#0" expanded="true" />
-                <element signature="method#calculateAreas#0;class#Queries#0" expanded="true" />
-                <element signature="method#busesPerArea#0;class#Queries#0" expanded="true" />
-                <element signature="method#congestedBuses#0;class#Queries#0" expanded="true" />
-                <element signature="method#stopsPerLine#0;class#Queries#0" expanded="true" />
-                <element signature="method#busesAtStopBatch#0;class#Queries#0" expanded="true" />
-                <element signature="method#busesAtStopInAreaBatch#0;class#Queries#0" expanded="true" />
-                <element signature="method#timeToStop#0;class#Queries#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="613">
+              <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -105,16 +90,15 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/java/spark_apps/JavaDataframeExample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" />
         <option value="$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="82" />
-    <option name="y" value="-9" />
-    <option name="width" value="646" />
-    <option name="height" value="559" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -123,57 +107,12 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Dslab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spark-Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dslab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spark-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dslab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spark-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dslab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spark-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dslab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spark-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dslab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Spark-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="spark_apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545367443347" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545411863748" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -323,8 +262,7 @@
     <option name="totallyTimeSpent" value="35637000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2208" height="1248" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.17399268" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -335,7 +273,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49917355" weight="0.27914438" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49917355" visible="true" weight="0.27914438" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39871088" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -447,31 +385,20 @@
     <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/log4j/log4j/srcs/log4j-1.2.17-sources.jar!/org/apache/log4j/Level.java" />
     <entry file="file://$PROJECT_DIR$/../Downloads/task6_batch.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/JavaDataframeExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2599">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="421">
+          <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
           <folding>
-            <element signature="method#calculateMids#0;class#Queries#0" expanded="true" />
-            <element signature="method#calculateAreas#0;class#Queries#0" expanded="true" />
-            <element signature="method#busesPerArea#0;class#Queries#0" expanded="true" />
-            <element signature="method#congestedBuses#0;class#Queries#0" expanded="true" />
-            <element signature="method#stopsPerLine#0;class#Queries#0" expanded="true" />
-            <element signature="method#busesAtStopBatch#0;class#Queries#0" expanded="true" />
-            <element signature="method#busesAtStopInAreaBatch#0;class#Queries#0" expanded="true" />
-            <element signature="method#timeToStop#0;class#Queries#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#JavaDataframeExample#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="613">
+          <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
         </state>
       </provider>
     </entry>
