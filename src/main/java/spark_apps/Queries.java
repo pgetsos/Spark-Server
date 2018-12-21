@@ -10,7 +10,6 @@ import java.util.Set;
 
 import static org.apache.spark.sql.functions.*;
 
-
 class Queries {
 
 	private static final String DATE = "Date";
@@ -21,61 +20,119 @@ class Queries {
 	private static final String AT_STOP = "atStop";
     private static final String CONGESTION = "congestion";
     private static final String HOUR = "Hour";
+    private static final String STOP_ID = "stopID";
+    private static final String LINE_ID = "lineID";
 
     private Dataset<Row> df;
 
-    Queries(Dataset<Row> df){
-        this.df=df;
-    }
-    // Query #1
-    void busesPerArea(){
+    private double midLongitude = -200;
+    private double midLatitude = -200;
 
-	    @SuppressWarnings("Duplicates")
+    private Dataset<Row> busesOfArea1 = null;
+    private Dataset<Row> busesOfArea2 = null;
+    private Dataset<Row> busesOfArea3 = null;
+    private Dataset<Row> busesOfArea4 = null;
+
+    private void calculateMids() {
         double minLongitude = (double) df.agg(min(LONG)).collectAsList().get(0).get(0);
         double maxLongitude = (double) df.agg(max(LONG)).collectAsList().get(0).get(0);
         double minLatitude = (double) df.agg(min(LAT)).collectAsList().get(0).get(0);
         double maxLatitude = (double) df.agg(max(LAT)).collectAsList().get(0).get(0);
 
-        double midLongitude = (minLongitude + maxLongitude) / 2;
-        double midLatitude = (minLatitude + maxLatitude) / 2;
+        midLongitude = (minLongitude + maxLongitude) / 2;
+        midLatitude = (minLatitude + maxLatitude) / 2;
+    }
 
-        Dataset<Row> df1 = df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).gt(midLongitude))).dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).groupBy(DATE).count().withColumn("Area", lit("Area 1"));
-        Dataset<Row> df2 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).groupBy(DATE).count().withColumn("Area", lit("Area 2"));
-        Dataset<Row> df3 = df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).groupBy(DATE).count().withColumn("Area", lit("Area 3"));
-        Dataset<Row> df4 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).gt(midLongitude))).dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).groupBy(DATE).count().withColumn("Area", lit("Area 4"));
+    private void calculateAreas() {
+        busesOfArea1 = df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).gt(midLongitude)));
+        busesOfArea2 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).lt(midLongitude)));
+        busesOfArea3 = df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).lt(midLongitude)));
+        busesOfArea4 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).gt(midLongitude)));
+    }
 
-        Dataset<Row> df_concated = df1.union(df2).union(df3).union(df4).sort("Date", "Area");
+    Queries(Dataset<Row> df){
+        this.df=df;
+    }
 
-        df_concated.show(150);
+    // Query #1
+    void busesPerArea(){
 
+        if(midLatitude == -200) {
+            calculateMids();
+        }
 
+        if(busesOfArea1 == null) {
+            calculateAreas();
+        }
 
+        Dataset<Row> df1 = busesOfArea1.dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).groupBy(DATE).count().withColumn("Area", lit("Area 1"));
+        Dataset<Row> df2 = busesOfArea2.dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).groupBy(DATE).count().withColumn("Area", lit("Area 2"));
+        Dataset<Row> df3 = busesOfArea3.dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).groupBy(DATE).count().withColumn("Area", lit("Area 3"));
+        Dataset<Row> df4 = busesOfArea4.dropDuplicates(VEHICLE_JOURNEY_ID, DATE).sort(DATE).groupBy(DATE).count().withColumn("Area", lit("Area 4"));
+
+        Dataset<Row> dfConcated = df1.union(df2).union(df3).union(df4).sort(DATE, "Area");
+
+        dfConcated.show(150);
     }
 
     // Query #2
     public void congestedBuses(){
 
-        double minLongitude = (double) df.agg(min(LONG)).collectAsList().get(0).get(0);
-        double maxLongitude = (double) df.agg(max(LONG)).collectAsList().get(0).get(0);
-        double minLatitude = (double) df.agg(min(LAT)).collectAsList().get(0).get(0);
-        double maxLatitude = (double) df.agg(max(LAT)).collectAsList().get(0).get(0);
+        if(midLatitude == -200) {
+            calculateMids();
+        }
 
-        double midLongitude = (minLongitude + maxLongitude) / 2;
-        double midLatitude = (minLatitude + maxLatitude) / 2;
+        if(busesOfArea1 == null) {
+            calculateAreas();
+        }
 
-        /*int avg1 = (int)*/ df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).gt(midLongitude))).groupBy(DATE, HOUR).count().show(30);
+        Dataset<Row> df1 = busesOfArea1.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 1"));
+        Dataset<Row> df2 = busesOfArea2.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 2"));
+        Dataset<Row> df3 = busesOfArea3.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 3"));
+        Dataset<Row> df4 = busesOfArea4.filter(col(DATE).lt("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR).groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 4"));
 
-        df.filter(df.col(CONGESTION).equalTo(1))/*.dropDuplicates(VEHICLE_ID, DATE)*/.sort(DATE).groupBy(DATE, HOUR).count().show();
-        //Dataset<Row> df2 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(VEHICLE_ID, DATE).sort(DATE).groupBy(DATE).count();
-        //Dataset<Row> df3 = df.filter(df.col(LAT).gt(midLatitude).and(df.col(LONG).lt(midLongitude))).dropDuplicates(VEHICLE_ID, DATE).sort(DATE).groupBy(DATE).count();
-        //Dataset<Row> df4 = df.filter(df.col(LAT).lt(midLatitude).and(df.col(LONG).gt(midLongitude))).dropDuplicates(VEHICLE_ID, DATE).sort(DATE).groupBy(DATE).count();
+        Dataset<Row> dfConcated = df1/*.union(df2).union(df3).union(df4)*/;
+
+        Dataset<Row> trained = dfConcated.groupBy(HOUR, "Area").agg(avg("Count")); //FIXME ΜΕΧΡΙ ΕΔΩ δουλευει τελεια
+
+        //New Datasets so that we calculate them only once
+        Dataset<Row> dfBusesAfterDateArea1 = busesOfArea1.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
+        Dataset<Row> dfBusesAfterDateArea2 = busesOfArea2.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
+        Dataset<Row> dfBusesAfterDateArea3 = busesOfArea3.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
+        Dataset<Row> dfBusesAfterDateArea4 = busesOfArea4.filter(col(DATE).geq("2013-01-16")).dropDuplicates(VEHICLE_JOURNEY_ID, DATE, HOUR);
+
+        // Eδω ΔΕΝ δουλευει κομπλε ΝΟΜΙΖΩ. Μαλλον τα equalTo αντι να παιρνουν πολλαπλα HOUR, Area για καθε γραμμη, παιρνουν
+        // μονιμα την ιδια τιμη και αρα εχουμε μονο τα > καποια σταθερα ~ 600 λεοφωρεια. Δηλαδη βγαζει μονο τα groupBy
+        // που εχουν πανω απο ~600 λεωφορεια ΝΟΜΙΖΩ
+        Dataset<Row> dfToCheck1 = dfBusesAfterDateArea1.groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 1"))
+                .filter(col("Count").lt(trained.filter(trained.col(HOUR).equalTo(col(HOUR))
+                        .and(trained.col("Area").equalTo(col("Area"))))
+                        .select("avg(Count)").first().getDouble(0)));
+        Dataset<Row> dfToCheck2 = dfBusesAfterDateArea2.groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 2"))
+                .filter(col("Count").lt(trained.filter(trained.col(HOUR).equalTo(col(HOUR))
+                        .and(trained.col("Area").equalTo(col("Area"))))
+                        .select("avg(Count)").first().getDouble(0)));
+        Dataset<Row> dfToCheck3 = dfBusesAfterDateArea3.groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 3"))
+                .filter(col("Count").lt(trained.filter(trained.col(HOUR).equalTo(col(HOUR))
+                        .and(trained.col("Area").equalTo(col("Area"))))
+                        .select("avg(Count)").first().getDouble(0)));
+        Dataset<Row> dfToCheck4 = dfBusesAfterDateArea4.groupBy(DATE, HOUR).count().withColumn("Area", lit("Area 4"))
+                .filter(col("Count").lt(trained.filter(trained.col(HOUR).equalTo(col(HOUR))
+                        .and(trained.col("Area").equalTo(col("Area"))))
+                        .select("avg(Count)").first().getDouble(0)));
+                /*.withColumn("Congested", lit(dfBusesAfterDateArea1.filter(dfBusesAfterDateArea1.col(CONGESTION).equalTo(1)
+                        .and(dfBusesAfterDateArea1.col(HOUR).equalTo(col(HOUR)))
+                        .and(dfBusesAfterDateArea1.col(DATE).equalTo(col(DATE))))
+                        .groupBy(DATE, HOUR).count().first().getLong(2)));*/
+
+        dfToCheck1.show(50);
     }
 
     // Query #3
     private static Map<String, Set<Integer>> map;
     void stopsPerLine(){
         map = new HashMap<>();
-        df.dropDuplicates("lineID", "stopID", AT_STOP).filter(df.col(AT_STOP).equalTo(1)).foreach(row -> {
+        df.dropDuplicates(LINE_ID, STOP_ID, AT_STOP).filter(df.col(AT_STOP).equalTo(1)).foreach(row -> {
             if(map.containsKey(row.getString(1))){
                 Set<Integer> tempSet = map.get(row.getString(1));
                 tempSet.add(row.getInt(13));
@@ -97,7 +154,7 @@ class Queries {
         df.filter(df.col(AT_STOP).equalTo(1)
                 .and(df.col(DATE).equalTo(date))
                 .and(df.col("Hour").equalTo(hour))
-                .and(df.col("stopID").equalTo(stopID))).groupBy("lineID").count().sort("lineID").show(50);
+                .and(df.col(STOP_ID).equalTo(stopID))).groupBy(LINE_ID).count().sort(LINE_ID).show(50);
     }
     // Query #5
     // In batch processing "last hour" is not feasible, so we run the query for every hour of each day.
@@ -105,17 +162,17 @@ class Queries {
         df.filter(df.col(AT_STOP).equalTo(1)
                 .and(df.col(LAT).gt(minLatitude)).and(df.col(LONG).gt(minLongitude))
                 .and(df.col(LAT).lt(maxLatitude)).and(df.col(LONG).lt(maxLongitude)))
-                .dropDuplicates("vehicleJourneyID", "stopID") // Counting each stop during a journey only once.
+                .dropDuplicates("vehicleJourneyID", STOP_ID) // Counting each stop during a journey only once.
                 .groupBy(DATE, "Hour").count().sort(DATE,"Hour").show();
     }
 
     // Query #6
     void timeToStop(String lineID, String timeFrame, int stopID){
         Dataset<Row> tempInitial = df.filter(df.col(DATE).equalTo(timeFrame)
-                .and(df.col("lineID").equalTo(lineID)));
+                .and(df.col(LINE_ID).equalTo(lineID)));
 
         Dataset<Row> matchingStops = tempInitial.filter(tempInitial.col(AT_STOP).equalTo(1)
-                .and(tempInitial.col("stopID").equalTo(stopID)))
+                .and(tempInitial.col(STOP_ID).equalTo(stopID)))
                 .sort("timestamp").dropDuplicates("vehicleJourneyID");
 
 

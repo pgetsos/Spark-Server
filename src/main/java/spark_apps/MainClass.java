@@ -20,9 +20,9 @@ import java.io.InputStreamReader;
 import static org.apache.spark.sql.functions.*;
 
 
-public class JavaDataframeExample {
+public class MainClass {
 
-    private static final Logger LOGGER = Logger.getLogger(TypeData.ClassName.class.getName());
+    private static final Logger LOGGER = Logger.getLogger("MainClass");
 
     public static void main(String[] args) {
         /*
@@ -66,7 +66,7 @@ public class JavaDataframeExample {
         String path = "C:\\Users\\pgetsos\\Desktop\\MSc\\sir010113-310113"; // Petros
         String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
 
-        Dataset<Row> df = sparkSession.read().schema(schema).csv(path2)
+        Dataset<Row> df = sparkSession.read().schema(schema).csv(path)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
@@ -77,14 +77,13 @@ public class JavaDataframeExample {
         df = df.withColumn("Date", date_format(df.col("DateTime"), "yyyy-MM-dd"));
         df = df.withColumn("Hour", hour(df.col("DateTime")));
 
-        df.show(2);
 
         Queries queries = new Queries(df);
 
         boolean run = true;
         while(run) {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Choose a query:\n0) Print schema\n1) Buses per Area\n2) \n3) Stops per line\n" +
+            System.out.println("Choose a query:\n0) Print schema\n1) Buses per Area\n2) Congestion per Hour per Area\n3) Stops per line\n" +
                     "4) Buses at Stop\n5) Buses at Stop in Area\n6) Time to Stop\n9) Exit");
             int a;
             try {
@@ -108,7 +107,6 @@ public class JavaDataframeExample {
                     queries.stopsPerLine();
                     break;
                 case 4:
-
                     try {
                         System.out.println("Choose a date (YYYY-MM-DD format)");
                         String date = br.readLine();
@@ -117,7 +115,6 @@ public class JavaDataframeExample {
                         System.out.println("Choose a stopID");
                         int stopID = Integer.parseInt(br.readLine());
                         queries.busesAtStopBatch(date, hour, stopID);
-                        //queries.timeToStop("38","2013-01-06",794);
                     } catch (IOException e) {
                         System.out.println("Wrong input, please try again");
                         continue;
@@ -136,14 +133,10 @@ public class JavaDataframeExample {
                         double maxlon = Double.parseDouble(br.readLine());
 
                         queries.busesAtStopInAreaBatch(minlat, minlon, maxlat, maxlon);
-
-
                     } catch (IOException e) {
                         System.out.println("Wrong input, please try again");
                         continue;
                     }
-
-
                     break;
                 case 6:
                     try {
@@ -170,9 +163,6 @@ public class JavaDataframeExample {
             }
             end = System.currentTimeMillis();
             LOGGER.info(String.format(finishedQuery, a, (end - start) / 1000));
-
         }
-
-
     }
 }
