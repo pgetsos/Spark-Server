@@ -4,7 +4,11 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" line="25" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a92f308c-3bda-46ba-a36a-baff32cbcf67" name="Default Changelist" comment="" />
+    <list default="true" id="a92f308c-3bda-46ba-a36a-baff32cbcf67" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_11_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_11_8_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -29,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="19" />
+            <state relative-caret-position="240">
+              <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,18 +46,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="165" column="72" lean-forward="true" selection-start-line="165" selection-start-column="72" selection-end-line="165" selection-end-column="72" />
+            <state relative-caret-position="225">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding>
-                <element signature="method#calculateMids#0;class#Queries#0" expanded="true" />
-                <element signature="method#calculateAreas#0;class#Queries#0" expanded="true" />
-                <element signature="method#busesPerArea#0;class#Queries#0" expanded="true" />
-                <element signature="method#congestedBuses#0;class#Queries#0" expanded="true" />
-                <element signature="method#stopsPerLine#0;class#Queries#0" expanded="true" />
-                <element signature="method#busesAtStopBatch#0;class#Queries#0" expanded="true" />
-                <element signature="method#timeToStop#0;class#Queries#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/ServerThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,11 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/BaseQueryClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="30">
               <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#432#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -74,17 +81,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MapPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
+            <state relative-caret-position="30">
               <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MapQuery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
+            <state relative-caret-position="30">
               <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="160" column="40" selection-start-line="160" selection-start-column="40" selection-end-line="160" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,6 +125,7 @@
       <find>&quot;vehicleID&quot;</find>
       <find>&quot;atStop&quot;</find>
       <find>JavaDataframeExample</find>
+      <find>df</find>
     </findStrings>
     <replaceStrings>
       <replace>LONG</replace>
@@ -125,19 +145,22 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/java/spark_apps/JavaDataframeExample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" />
         <option value="$PROJECT_DIR$/src/main/java/spark_apps/scriptFile.scala" />
         <option value="$PROJECT_DIR$/src/main/java/spark_apps/BaseQueryClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/spark_apps/MapPoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/spark_apps/MapQuery.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spark_apps/ServerThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spark_apps/Server.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spark_apps/Queries.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="1027" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="59" />
+    <option name="y" value="-4" />
+    <option name="width" value="1861" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -191,7 +214,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547894421323" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547916701652" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -341,10 +364,10 @@
     <option name="totallyTimeSpent" value="36753000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2208" height="1248" extended-state="6" />
+    <frame x="59" y="-4" width="1861" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.17399268" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3559322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -353,15 +376,15 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49917355" visible="true" weight="0.27914438" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39871088" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986226" visible="true" weight="0.35632184" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39827773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3272727" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5008264" side_tool="true" weight="0.55590385" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013774" side_tool="true" weight="0.30032292" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
@@ -392,7 +415,7 @@
       <window_info anchor="right" id="Quick Notes" order="14" />
       <window_info anchor="right" id="Ultimate PasteBin" order="15" />
       <window_info anchor="right" id="Code Consultant" order="16" />
-      <window_info anchor="right" x="0" y="0" width="415" height="892" id="Documentation" order="17" sideWeight="0.50158226" side_tool="true" weight="0.24958678" />
+      <window_info anchor="right" x="0" y="0" width="415" height="892" id="Documentation" order="17" sideWeight="0.50158226" side_tool="true" weight="0.24858756" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.52584815" />
@@ -444,7 +467,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.2-sources.jar!/org/apache/spark/sql/functions.scala" />
-    <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.3.2.jar!/org/apache/spark/sql/functions.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/WordcountGrepAppJava.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/spark_apps/WordcountGrepApp.scala" />
     <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/log4j/log4j/srcs/log4j-1.2.17-sources.jar!/org/apache/log4j/Priority.java" />
@@ -465,29 +487,64 @@
     <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/log4j/log4j/srcs/log4j-1.2.17-sources.jar!/org/apache/log4j/Level.java" />
     <entry file="file://$PROJECT_DIR$/../Downloads/task6_batch.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/JavaDataframeExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/scriptFile.scala">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/scriptFile.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MapQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="165" column="72" lean-forward="true" selection-start-line="165" selection-start-column="72" selection-end-line="165" selection-end-column="72" />
+        <state relative-caret-position="30">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MapPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.3.2.jar!/org/apache/spark/sql/functions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="304" column="37" selection-start-line="304" selection-start-column="37" selection-end-line="304" selection-end-column="37" />
           <folding>
-            <element signature="method#calculateMids#0;class#Queries#0" expanded="true" />
-            <element signature="method#calculateAreas#0;class#Queries#0" expanded="true" />
-            <element signature="method#busesPerArea#0;class#Queries#0" expanded="true" />
-            <element signature="method#congestedBuses#0;class#Queries#0" expanded="true" />
-            <element signature="method#stopsPerLine#0;class#Queries#0" expanded="true" />
-            <element signature="method#busesAtStopBatch#0;class#Queries#0" expanded="true" />
-            <element signature="method#timeToStop#0;class#Queries#0" expanded="true" />
+            <element signature="e#75403#75404#0" expanded="true" />
+            <element signature="e#75463#75464#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java">
+    <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.3.2.jar!/org/apache/spark/sql/functions$.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="19" />
+        <state relative-caret-position="207">
+          <caret line="1712" column="55" lean-forward="true" selection-start-line="1712" selection-start-column="55" selection-end-line="1712" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.3.2.jar!/org/apache/spark/sql/SparkSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="636" column="29" selection-start-line="636" selection-start-column="29" selection-end-line="636" selection-end-column="29" />
+          <folding>
+            <element signature="e#47111#47112#0" expanded="true" />
+            <element signature="e#47160#47161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/ServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -496,25 +553,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/BaseQueryClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="30">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/Queries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="160" column="40" selection-start-line="160" selection-start-column="40" selection-end-line="160" selection-end-column="40" />
           <folding>
-            <element signature="e#0#432#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MapPoint.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MapQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="240">
+          <caret line="84" column="44" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -156,6 +156,17 @@ class Queries {
                 .and(df.col("Hour").equalTo(hour))
                 .and(df.col(STOP_ID).equalTo(stopID))).groupBy(LINE_ID).count().sort(LINE_ID).show(50);
     }
+    // Query #4 Streaming
+    void busesAtStopStreaming(String date, int hour, int stopID){
+        df.filter(col(AT_STOP).equalTo(1)
+                .and(col(DATE).equalTo(date))
+                .and(col("Hour").equalTo(hour))
+                .and(col(STOP_ID).equalTo(stopID))).groupBy(LINE_ID).count()
+                //.sort(LINE_ID)
+                .writeStream()
+                .outputMode("complete")
+                .format("console").start();
+    }
     // Query #5
     // In batch processing "last hour" is not feasible, so we run the query for every hour of each day.
     void busesAtStopInAreaBatch(double minLatitude, double minLongitude, double maxLatitude, double maxLongitude){
