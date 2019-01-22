@@ -12,6 +12,7 @@ import org.apache.spark.sql.types.Metadata;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
 import org.apache.spark.streaming.Durations;
+import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 
 import java.io.BufferedReader;
@@ -21,8 +22,6 @@ import java.io.InputStreamReader;
 import static org.apache.spark.sql.functions.*;
 
 
-// Streaming Imports
-import java.util.concurrent.*;
 
 public class MainClass {
     private static final Logger LOGGER = Logger.getLogger("MainClass");
@@ -42,10 +41,14 @@ public class MainClass {
         SparkConf conf = new SparkConf();
         conf.setAppName("spark_apps.MainClass");
         conf.set("spark.driver.allowMultipleContexts", "true");
+
         conf.setMaster("local[*]");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(1));
+//        JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(1));
+//
+//        JavaReceiverInputDStream<String> lines = jssc.socketTextStream("localhost", 4321);
+
 
 
 
@@ -82,9 +85,21 @@ public class MainClass {
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
 
-        Dataset<Row> dfStream = sparkSession.readStream().schema(schema).csv(path2)
-                .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
-                        "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
+//        Dataset<Row> dfStream = sparkSession.readStream().schema(schema).csv(path2)
+//                .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
+//                        "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
+
+
+//        DataServer dt = new DataServer();
+//        dt.openServer();
+
+        Dataset<Row> dfStream = sparkSession
+                .readStream()
+//                .schema(schema)
+                .format("socket")
+                .option("host", "localhost")
+                .option("port", 4321)
+                .load();
 
         long end = System.currentTimeMillis();
         LOGGER.info("Load complete in "+ (end - start)/1000 +" seconds");
@@ -93,9 +108,9 @@ public class MainClass {
         df = df.withColumn("Date", date_format(df.col("DateTime"), "yyyy-MM-dd"));
         df = df.withColumn("Hour", hour(df.col("DateTime")));
 
-        dfStream = dfStream.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
-        dfStream = dfStream.withColumn("Date", date_format(col("DateTime"), "yyyy-MM-dd"));
-        dfStream= dfStream.withColumn("Hour", hour(col("DateTime")));
+//        dfStream = dfStream.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
+//        dfStream = dfStream.withColumn("Date", date_format(col("DateTime"), "yyyy-MM-dd"));
+//        dfStream= dfStream.withColumn("Hour", hour(col("DateTime")));
 
 
         Queries queries = new Queries(df);
@@ -139,6 +154,7 @@ public class MainClass {
                         System.out.println("Choose a stopID");
                         int stopID = Integer.parseInt(br.readLine());
                         streaming_queries.busesAtStopStreaming(date, hour, stopID);
+
                     } catch (IOException e) {
                         System.out.println("Wrong input, please try again");
                         continue;

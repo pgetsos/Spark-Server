@@ -2,6 +2,8 @@ package spark_apps;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.streaming.StreamingQuery;
+import org.apache.spark.sql.streaming.StreamingQueryException;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -158,14 +160,17 @@ class Queries {
     }
     // Query #4 Streaming
     void busesAtStopStreaming(String date, int hour, int stopID){
-        df.filter(col(AT_STOP).equalTo(1)
-                .and(col(DATE).equalTo(date))
-                .and(col("Hour").equalTo(hour))
-                .and(col(STOP_ID).equalTo(stopID))).groupBy(LINE_ID).count()
+//        df.filter(col(AT_STOP).equalTo(1)
+//                .and(col(DATE).equalTo(date))
+//                .and(col("Hour").equalTo(hour))
+//                .and(col(STOP_ID).equalTo(stopID))).groupBy(LINE_ID).count()
                 //.sort(LINE_ID)
-                .writeStream()
-                .outputMode("complete")
-                .format("console").start();
+        df.writeStream().format("console").start();
+//        try {
+//            query.awaitTermination();
+//        } catch (StreamingQueryException e){
+//            e.printStackTrace();
+//        }
     }
     // Query #5
     // In batch processing "last hour" is not feasible, so we run the query for every hour of each day.
