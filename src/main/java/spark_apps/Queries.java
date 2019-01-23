@@ -165,12 +165,14 @@ class Queries {
 //                .and(col("Hour").equalTo(hour))
 //                .and(col(STOP_ID).equalTo(stopID))).groupBy(LINE_ID).count()
                 //.sort(LINE_ID)
-        df.writeStream().format("console").start();
-//        try {
-//            query.awaitTermination();
-//        } catch (StreamingQueryException e){
-//            e.printStackTrace();
-//        }
+        StreamingQuery query = df.writeStream().format("console").start();
+
+
+        try {
+            query.awaitTermination();
+        } catch (StreamingQueryException e){
+            e.printStackTrace();
+        }
     }
     // Query #5
     // In batch processing "last hour" is not feasible, so we run the query for every hour of each day.

@@ -3,6 +3,7 @@ package spark_apps;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.Charset;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -64,25 +65,38 @@ public class DataSocketServer {
                         Scanner scanner = new Scanner(new File("/media/spiros/Data/SparkDataset/"+filename));
                         System.out.print("Printing lines...");
 //                        scanner.useDelimiter(",");
+                        int counter = 0;
+                        StringBuilder sb = new StringBuilder();
                         while(scanner.hasNext()){
                             String line = scanner.next();
-                            line = line.replaceAll(",", "\t");
-                            System.out.println(line);
-                            System.out.println("\n");
+                            sb.append("\n").append(line);
+                            counter++;
+                            if (counter == 10) {
+                                counter = 0;
 
 
-                            out.writeUTF(line);
-                            out.writeUTF("\n");
+                                out.write(sb.toString().replaceAll("[^\\p{ASCII}]", "").getBytes());
+                                out.flush();
+
+
+                                System.out.println(sb.toString());
+                                sb.setLength(0);
+                                Thread.sleep(5000);
+                            }
+                        }
+                        if (sb.length() > 0) {
+                            out.write(sb.toString().getBytes());
                             out.flush();
-
-
+                            System.out.println(sb.toString());
+                            sb.setLength(0);
                         }
                         scanner.close();
                     }} catch (FileNotFoundException e) {
                     e.printStackTrace();
 
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-
 
 
             }
