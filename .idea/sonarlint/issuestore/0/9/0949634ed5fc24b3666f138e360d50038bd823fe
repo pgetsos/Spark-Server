@@ -1,32 +1,0 @@
-
-V
-squid:S106u"9Replace this use of System.out or System.err by a logger.(ó„’’8Ë´Åü,
-Nsquid:S1481r"+Remove this unused "lineID" local variable.(°†¼£ÿÿÿÿÿ8¯¨¶Åü,
-Vsquid:S1854t"8Remove this useless assignment to local variable "date".(ËùüÌ8¯¨¶Åü,
-Msquid:S1481C"*Remove this unused "path2" local variable.(Ï¸ßûÿÿÿÿ8Îñ¹Åü,
-Xsquid:S1854v":Remove this useless assignment to local variable "stopID".(×¯²È8¯¨¶Åü,
-V
-squid:S106q"9Replace this use of System.out or System.err by a logger.(±òİ™8ÑœªÅü,
-lsquid:S1192L"IDefine a constant instead of duplicating this literal "DateTime" 3 times.(‚ØŠ‡úÿÿÿÿ8öŠÅü,
-[
-squid:S106z"9Replace this use of System.out or System.err by a logger.(÷´à‚üÿÿÿÿ8êŸ°Åü,
-nsquid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(ï‘Äçûÿÿÿÿ8¯¨¶Åü,
-[
-squid:S106["9Replace this use of System.out or System.err by a logger.(÷´à‚üÿÿÿÿ8öŠÅü,
-[
-squid:S106U"9Replace this use of System.out or System.err by a logger.(ƒ¸¦çşÿÿÿÿ8öŠÅü,
-]squid:S1854r":Remove this useless assignment to local variable "lineID".(°†¼£ÿÿÿÿÿ8¯¨¶Åü,
-Gsquid:S1481t")Remove this unused "date" local variable.(ËùüÌ8¯¨¶Åü,
-V
-squid:S106s"9Replace this use of System.out or System.err by a logger.(Óéäí8êŸ°Åü,
-{
-squid:S135S"YReduce the total number of break and continue statements in this loop to use at most one.(ÑÒŸ¹øÿÿÿÿ8öŠÅü,
-\
-squid:S106†"9Replace this use of System.out or System.err by a logger.(÷´à‚üÿÿÿÿ8êŸ°Åü,
-dsquid:S1075C"ARefactor your code to get this URI from a customizable parameter.(Ï¸ßûÿÿÿÿ8öŠÅü,
-Isquid:S1481v"+Remove this unused "stopID" local variable.(×¯²È8¯¨¶Åü,
-squid:S1192["^Define a constant instead of duplicating this literal "Wrong input, please try again" 3 times.(÷´à‚üÿÿÿÿ8ÑœªÅü,
-\squid:S1854C"9Remove this useless assignment to local variable "path2".(Ï¸ßûÿÿÿÿ8Îñ¹Åü,
-dsquid:S1075B"ARefactor your code to get this URI from a customizable parameter.(Œ§¿‹úÿÿÿÿ8öŠÅü,
-qsquid:S2095*"NUse try-with-resources or close this "JavaSparkContext" in a "finally" clause.(¸á‚Ğùÿÿÿÿ8öŠÅü,
-hsquid:S1192."JDefine a constant instead of duplicating this literal "timestamp" 3 times.(›ÖÏ¯8öŠÅü,

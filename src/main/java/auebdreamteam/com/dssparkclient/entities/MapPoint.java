@@ -4,7 +4,7 @@
  * All right reserved except otherwise noted
  */
 
-package spark_apps;
+package auebdreamteam.com.dssparkclient.entities;
 
 public class MapPoint {
 	private double LongCoordinate;
