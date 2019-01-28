@@ -1,14 +1,14 @@
-package spark_apps;
+package auebdreamteam.com.dssparkclient;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.streaming.StreamingQuery;
 import org.apache.spark.sql.streaming.StreamingQueryException;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.*;
 
 import static org.apache.spark.sql.functions.*;
 
@@ -151,6 +151,7 @@ class Queries {
             System.out.println(String.format("Bus Line %s has Stops -> %s", stringSetEntry.getKey(), stringSetEntry.getValue().toString()));
         }
     }
+
     // Query #4
     void busesAtStopBatch(String date, int hour, int stopID){
         df.filter(df.col(AT_STOP).equalTo(1)
@@ -158,6 +159,7 @@ class Queries {
                 .and(df.col("Hour").equalTo(hour))
                 .and(df.col(STOP_ID).equalTo(stopID))).groupBy(LINE_ID).count().sort(LINE_ID).show(50);
     }
+
     // Query #4 Streaming
     void busesAtStopStreaming(String date, int hour, int stopID){
 //        df.filter(col(AT_STOP).equalTo(1)
@@ -181,6 +183,7 @@ class Queries {
             e.printStackTrace();
         }
     }
+
     // Query #5
     // In batch processing "last hour" is not feasible, so we run the query for every hour of each day.
     void busesAtStopInAreaBatch(double minLatitude, double minLongitude, double maxLatitude, double maxLongitude){

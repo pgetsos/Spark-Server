@@ -1,12 +1,11 @@
 
-jsquid:S1192."GDefine a constant instead of duplicating this literal "lineID" 3 times.(¸î¤êýÿÿÿÿ8ç¢ŠÅü,
-jsquid:S1192."GDefine a constant instead of duplicating this literal "stopID" 3 times.(¸î¤êýÿÿÿÿ8ç¢ŠÅü,
-nsquid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(°À…ùÿÿÿÿ8ç¢ŠÅü,
-Fsquid:S1481&"(Remove this unused "df1" local variable.(Ö½ƒ­8ç¢ŠÅü,
-Ksquid:S1481'"(Remove this unused "df2" local variable.(›¤‘›úÿÿÿÿ8ç¢ŠÅü,
-Fsquid:S1481("(Remove this unused "df3" local variable.(áºÇð8ç¢ŠÅü,
-Ksquid:S1481)"(Remove this unused "df4" local variable.(­Ã”£ûÿÿÿÿ8ç¢ŠÅü,
-Zsquid:S1854)"7Remove this useless assignment to local variable "df4".(­Ã”£ûÿÿÿÿ8ç¢ŠÅü,
-Usquid:S1854("7Remove this useless assignment to local variable "df3".(áºÇð8ç¢ŠÅü,
-Zsquid:S1854'"7Remove this useless assignment to local variable "df2".(›¤‘›úÿÿÿÿ8ç¢ŠÅü,
-Usquid:S1854&"7Remove this useless assignment to local variable "df1".(Ö½ƒ­8ç¢ŠÅü,
+Zsquid:S2696ˆ"6Make the enclosing method "static" or remove this set.(Í÷½ôøÿÿÿÿ8‚¿ñœ‡-
+Qsquid:S1068".Remove this unused "VEHICLE_ID" private field.(»÷ÿ˜øÿÿÿÿ8‚¿ñœ‡-
+|squid:S1192·"XUse already-defined constant 'VEHICLE_JOURNEY_ID' instead of duplicating its value here.(í÷Ìíøÿÿÿÿ8‚¿ñœ‡-
+nsquid:S1192Â"JDefine a constant instead of duplicating this literal "timestamp" 5 times.(ºÄ¾³üÿÿÿÿ8‚¿ñœ‡-
+vsquid:S1450†"RRemove the "map" field and declare it as a local variable in the relevant methods.(ÎÃþíþÿÿÿÿ8‚¿ñœ‡-
+isquid:S1192["KDefine a constant instead of duplicating this literal "2013-01-16" 8 times.(ØÝ“8‚¿ñœ‡-
+usquid:S00117l"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÒ¢±øÿÿÿÿ8‚¿ñœ‡-
+Jsquid:S1172¢"&Remove these unused method parameters.(Ñ¹§ùÿÿÿÿ8‚¿ñœ‡-
+vsquid:S00117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÈ”äþÿÿÿÿ8‚¿ñœ‡-
+Gsquid:S1148®"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ßÚ·î‡-

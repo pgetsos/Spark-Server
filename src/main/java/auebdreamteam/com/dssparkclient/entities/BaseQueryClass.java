@@ -4,14 +4,15 @@
  * All right reserved except otherwise noted
  */
 
-package spark_apps;
+package auebdreamteam.com.dssparkclient.entities;
 
 import java.io.Serializable;
 
 public abstract class BaseQueryClass implements Serializable {
 
-	String serverIP;
+	private static final long serialVersionUID = 12345678904L;
 
+	private String serverIP;
 	public String getServerIP() {
 		return serverIP;
 	}

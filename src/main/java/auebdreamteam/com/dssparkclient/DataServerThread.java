@@ -1,4 +1,4 @@
-package spark_apps;
+package auebdreamteam.com.dssparkclient;
 import org.spark_project.dmg.pmml.True;
 
 import java.io.*;

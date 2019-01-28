@@ -1,9 +1,8 @@
-package spark_apps;
+package auebdreamteam.com.dssparkclient;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.charset.Charset;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -77,8 +76,6 @@ public class DataSocketServer {
 
                                 out.print(sb.toString().replaceAll("[^\\p{ASCII}]", ""));
                                 out.flush();
-
-
                                 System.out.println(sb.toString());
                                 sb.setLength(0);
                                 //Thread.sleep(5000);

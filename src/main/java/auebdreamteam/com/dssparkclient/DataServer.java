@@ -1,4 +1,4 @@
-package spark_apps;
+package auebdreamteam.com.dssparkclient;
 import java.io.*;
 import java.net.*;
 
