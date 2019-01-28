@@ -149,9 +149,9 @@ public class MainClass {
     df = df.withColumn("Date", date_format(df.col("DateTime"), "yyyy-MM-dd"));
     df = df.withColumn("Hour", hour(df.col("DateTime")));
 
-//        dfStream = dfStream.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
-//        dfStream = dfStream.withColumn("Date", date_format(col("DateTime"), "yyyy-MM-dd"));
-//        dfStream= dfStream.withColumn("Hour", hour(col("DateTime")));
+    dfStream = dfStream.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
+    dfStream = dfStream.withColumn("Date", date_format(col("DateTime"), "yyyy-MM-dd"));
+    dfStream= dfStream.withColumn("Hour", hour(col("DateTime")));
 
 
     Queries queries = new Queries(df);
@@ -194,7 +194,7 @@ public class MainClass {
                     int hour = Integer.parseInt(br.readLine());
                     System.out.println("Choose a stopID");
                     int stopID = Integer.parseInt(br.readLine());
-                        streaming_queries.busesAtStopStreaming(date, hour, stopID);
+                    streaming_queries.busesAtStopStreaming(date, hour, stopID);
 //                    jssc.start();
 //                    try{
 //                        jssc.awaitTermination();

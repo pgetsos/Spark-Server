@@ -55,7 +55,7 @@ public class DataSocketServer {
 //                t.start();
                 System.out.println("Connection established!");
                 //ObjectInputStream in = new ObjectInputStream(connection.getInputStream());
-                ObjectOutputStream out = new ObjectOutputStream(connection.getOutputStream());
+                PrintWriter out = new PrintWriter(connection.getOutputStream());
 
                 try {
                     final File folder = new File("/media/spiros/Data/SparkDataset/");
@@ -69,23 +69,23 @@ public class DataSocketServer {
                         StringBuilder sb = new StringBuilder();
                         while(scanner.hasNext()){
                             String line = scanner.next();
-                            sb.append("\n").append(line);
+                            sb.append(line).append("\n");
                             counter++;
                             if (counter == 10) {
                                 counter = 0;
 
 
-                                out.write(sb.toString().replaceAll("[^\\p{ASCII}]", "").getBytes());
+                                out.print(sb.toString().replaceAll("[^\\p{ASCII}]", ""));
                                 out.flush();
 
 
                                 System.out.println(sb.toString());
                                 sb.setLength(0);
-                                Thread.sleep(5000);
+                                //Thread.sleep(5000);
                             }
                         }
                         if (sb.length() > 0) {
-                            out.write(sb.toString().getBytes());
+                            out.print(sb.toString());
                             out.flush();
                             System.out.println(sb.toString());
                             sb.setLength(0);
@@ -94,8 +94,6 @@ public class DataSocketServer {
                     }} catch (FileNotFoundException e) {
                     e.printStackTrace();
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
 
 

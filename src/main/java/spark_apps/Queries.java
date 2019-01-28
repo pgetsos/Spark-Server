@@ -164,8 +164,15 @@ class Queries {
 //                .and(col(DATE).equalTo(date))
 //                .and(col("Hour").equalTo(hour))
 //                .and(col(STOP_ID).equalTo(stopID))).groupBy(LINE_ID).count()
-                //.sort(LINE_ID)
-        StreamingQuery query = df.writeStream().format("console").start();
+//                .sort(LINE_ID)
+        StreamingQuery query = df
+                .filter(col(AT_STOP).equalTo(1)
+                .and(col(DATE).equalTo(date))
+                .and(col("Hour").equalTo(hour))
+                .and(col(STOP_ID).equalTo(stopID)))
+                //.groupBy(LINE_ID).count()
+                /*.sort(LINE_ID)*/
+                .writeStream().format("console").start();
 
 
         try {
@@ -182,6 +189,22 @@ class Queries {
                 .and(df.col(LAT).lt(maxLatitude)).and(df.col(LONG).lt(maxLongitude)))
                 .dropDuplicates("vehicleJourneyID", STOP_ID) // Counting each stop during a journey only once.
                 .groupBy(DATE, "Hour").count().sort(DATE,"Hour").show();
+    }
+
+    // Query #5 Streaming
+    void busesAtStopInAreaStream(double minLatitude, double minLongitude, double maxLatitude, double maxLongitude){
+        StreamingQuery query = df.filter(df.col(AT_STOP).equalTo(1)
+                .and(df.col(LAT).gt(minLatitude)).and(df.col(LONG).gt(minLongitude))
+                .and(df.col(LAT).lt(maxLatitude)).and(df.col(LONG).lt(maxLongitude)))
+                .dropDuplicates("vehicleJourneyID", STOP_ID) // Counting each stop during a journey only once.
+                //.groupBy(DATE, "Hour").count()
+                .writeStream().format("console").start()/*.sort(DATE,"Hour").show()*/;
+
+        try {
+            query.awaitTermination();
+        } catch (StreamingQueryException e){
+            e.printStackTrace();
+        }
     }
 
     // Query #6
