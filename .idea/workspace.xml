@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a92f308c-3bda-46ba-a36a-baff32cbcf67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_avro_avro_1_7_7_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_avro_avro_1_7_7_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_11_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_11_8_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Dslab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Dslab.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0df382262a92f20d1b77a179bcc9ea27d73bc105" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2c6c0ad5bc25e8c78d104fbaee23fa2bc9134b5e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/687c68711bb4dae6c7f33e9f597d2c25641a9dd1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/9/89a21ee9e55ab15b238e1a7c69268928aeffd534" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bbe930fc2954499c56eeed0d7ee1c29c65b31cf4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f96983596cb713dbfeb331a8869ddd6487883a06" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/MainClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/Queries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/Queries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/MapPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/MapPoint.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/project/project/target/" />
     <ignored path="$PROJECT_DIR$/project/target/" />
@@ -33,106 +22,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="290" column="171" selection-start-line="290" selection-start-column="171" selection-end-line="290" selection-end-column="171" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#MainClass#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/Queries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="197" column="52" lean-forward="true" selection-start-line="197" selection-start-column="52" selection-end-line="197" selection-end-column="52" />
+            <state relative-caret-position="710">
+              <caret line="267" column="34" lean-forward="true" selection-start-line="267" selection-start-column="34" selection-end-line="267" selection-end-column="34" />
               <folding>
-                <element signature="method#busesPerArea#0;class#Queries#0" expanded="true" />
-                <element signature="method#busesAtStopStreaming#0;class#Queries#0" expanded="true" />
-                <element signature="method#busesAtStopInAreaStream#0;class#Queries#0" expanded="true" />
-                <element signature="method#timeToStop#0;class#Queries#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/BaseQueryClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/BusesDelayQuery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="e#570#571#0" expanded="true" />
-                <element signature="e#597#598#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/MapQuery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataSocketServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2047">
-              <caret line="105" column="9" selection-start-line="45" selection-start-column="8" selection-end-line="105" selection-end-column="9" />
-              <folding>
-                <element signature="method#listFilesForFolder#0;class#DataSocketServer#0" expanded="true" />
-                <element signature="method#readFiles#0;class#DataSocketServer#0" expanded="true" />
-                <element signature="method#main#0;class#DataSocketServer#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataServerThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#DataServerThread#0;class#DataServerThread#0" expanded="true" />
-                <element signature="method#run#0;class#DataServerThread#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#10955#10956#0" expanded="true" />
+                <element signature="e#11025#11026#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>avg</find>
+      <find>.sort</find>
+      <find>gt</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -141,8 +60,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/MapPoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/Queries.java" />
         <option value="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/MainClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/Queries.java" />
       </list>
     </option>
   </component>
@@ -160,7 +79,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,13 +125,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549716024214" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549733842759" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -325,26 +244,19 @@
     <option name="totallyTimeSpent" value="11757000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2208" height="1248" extended-state="6" />
+    <frame x="58" y="-11" width="1863" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1911628" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19338843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" />
-      <window_info anchor="bottom" id="Build" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" />
-      <window_info anchor="bottom" id="CheckStyle" />
-      <window_info anchor="bottom" id="Statistic" />
-      <window_info anchor="bottom" id="SonarLint" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3747698" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4827586" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39963168" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -355,8 +267,14 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.36095765" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="right" id="sbt" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="13" />
+      <window_info anchor="bottom" id="Build" order="14" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="15" />
+      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
+      <window_info anchor="bottom" id="CheckStyle" order="17" />
+      <window_info anchor="bottom" id="Statistic" order="18" />
+      <window_info anchor="bottom" id="SonarLint" order="19" />
+      <window_info anchor="bottom" id="Database Changes" order="20" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -366,6 +284,8 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Bean Validation" order="8" />
+      <window_info anchor="right" id="sbt" order="9" />
+      <window_info anchor="right" id="Database" order="10" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.52584815" />
@@ -406,86 +326,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/Queries.java</url>
-          <line>198</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/MainClass.java</url>
-          <line>290</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/spark_apps/MainClass.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/BaseQueryClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/BusesDelayQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataSocketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2047">
-          <caret line="105" column="9" selection-start-line="45" selection-start-column="8" selection-end-line="105" selection-end-column="9" />
-          <folding>
-            <element signature="method#listFilesForFolder#0;class#DataSocketServer#0" expanded="true" />
-            <element signature="method#readFiles#0;class#DataSocketServer#0" expanded="true" />
-            <element signature="method#main#0;class#DataSocketServer#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#DataServerThread#0;class#DataServerThread#0" expanded="true" />
-            <element signature="method#run#0;class#DataServerThread#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="218" column="23" selection-start-line="218" selection-start-column="23" selection-end-line="218" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.2-sources.jar!/org/apache/spark/sql/Dataset.scala">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/FileInputStream.java" />
+    <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.2-sources.jar!/org/apache/spark/sql/Dataset.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="2737" column="6" selection-start-line="2737" selection-start-column="6" selection-end-line="2737" selection-end-column="6" />
@@ -499,33 +343,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/BaseQueryClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/BusesDelayQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/entities/MapQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="90">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/Queries.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataSocketServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="197" column="52" lean-forward="true" selection-start-line="197" selection-start-column="52" selection-end-line="197" selection-end-column="52" />
+        <state relative-caret-position="517">
+          <caret line="105" column="9" selection-start-line="45" selection-start-column="8" selection-end-line="105" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/DataServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding>
-            <element signature="method#busesPerArea#0;class#Queries#0" expanded="true" />
-            <element signature="method#busesAtStopStreaming#0;class#Queries#0" expanded="true" />
-            <element signature="method#busesAtStopInAreaStream#0;class#Queries#0" expanded="true" />
-            <element signature="method#timeToStop#0;class#Queries#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="290" column="171" selection-start-line="290" selection-start-column="171" selection-end-line="290" selection-end-column="171" />
+        <state relative-caret-position="195">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/auebdreamteam/com/dssparkclient/Queries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="267" column="34" lean-forward="true" selection-start-line="267" selection-start-column="34" selection-end-line="267" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#MainClass#0" expanded="true" />
+            <element signature="e#10955#10956#0" expanded="true" />
+            <element signature="e#11025#11026#0" expanded="true" />
           </folding>
         </state>
       </provider>
