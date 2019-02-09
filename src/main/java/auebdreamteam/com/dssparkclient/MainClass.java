@@ -75,7 +75,7 @@ public class MainClass {
         String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
         String path3 = "/Users/jason/Desktop/dataset/"; // Iasonas
 
-        Dataset<Row> df = sparkSession.read().schema(schema).csv(path)
+        Dataset<Row> df = sparkSession.read().schema(schema).csv(path2)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
@@ -137,9 +137,9 @@ public class MainClass {
 	    df = df.withColumn("Date", date_format(df.col("DateTime"), "yyyy-MM-dd"));
 	    df = df.withColumn("Hour", hour(df.col("DateTime")));
 
-	//        dfStream = dfStream.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
-	//        dfStream = dfStream.withColumn("Date", date_format(col("DateTime"), "yyyy-MM-dd"));
-	//        dfStream= dfStream.withColumn("Hour", hour(col("DateTime")));
+	    dfStream = dfStream.withColumn("DateTime", from_utc_timestamp(to_utc_timestamp(from_unixtime(col("timestamp").divide(lit(1000000L))), "Europe/Athens"), "Europe/Dublin"));
+	    dfStream = dfStream.withColumn("Date", date_format(col("DateTime"), "yyyy-MM-dd"));
+	    dfStream= dfStream.withColumn("Hour", hour(col("DateTime")));
 
 
 	    Queries queries = new Queries(df);
@@ -151,7 +151,7 @@ public class MainClass {
 	    while(run) {
 	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	        System.out.println("Choose a query:\n0) Print schema\n1) Buses per Area\n2) Congested Buses per Day per Hour per Area\n3) Stops per line\n" +
-	                "4) Buses at Stop\n5) Buses at Stop in Area\n6) Time to Stop\n9) Exit");
+	                "4) Buses at Stop\n5) Buses at Stop in Area\n6) Time to Stop\n7) Buses at Stop Streaming\n8) Buses at Stop in Area Streaming\n9) Exit");
 	        int a;
 	        try {
 	            a = Integer.parseInt(br.readLine());
@@ -181,7 +181,8 @@ public class MainClass {
 	                    int hour = Integer.parseInt(br.readLine());
 	                    System.out.println("Choose a stopID");
 	                    int stopID = Integer.parseInt(br.readLine());
-	                    streamingQueries.busesAtStopStreaming(date, hour, stopID);
+	                    //streamingQueries.busesAtStopStreaming(date, hour, stopID);
+						queries.busesAtStopBatch(date, hour, stopID);
 
 	                } catch (IOException e) {
 	                    System.out.println("Wrong input, please try again");
@@ -221,7 +222,42 @@ public class MainClass {
 	                }
 	                break;
 	            case 7:
+					try {
+						System.out.println("Choose a date (YYYY-MM-DD format)");
+						String date = br.readLine();
+						System.out.println("Choose Hour");
+						int hour = Integer.parseInt(br.readLine());
+						System.out.println("Choose a stopID");
+						int stopID = Integer.parseInt(br.readLine());
+						streamingQueries.busesAtStopStreaming(date, hour, stopID);
+
+					} catch (IOException e) {
+						System.out.println("Wrong input, please try again");
+						continue;
+					}
+
 	                break;
+
+
+				case 8:
+					try {
+						System.out.println("Choose minimum latitude");
+						double minlat = Double.parseDouble(br.readLine());
+						System.out.println("Choose maximum latitude");
+						double maxlat = Double.parseDouble(br.readLine());
+
+						System.out.println("Choose minimum longitude");
+						double minlon = Double.parseDouble(br.readLine());
+						System.out.println("Choose maximum longitude");
+						double maxlon = Double.parseDouble(br.readLine());
+
+						streamingQueries.busesAtStopInAreaStream(minlat, minlon, maxlat, maxlon);
+					} catch (IOException e) {
+						System.out.println("Wrong input, please try again");
+						continue;
+					}
+					break;
+
 	            case 9:
 	                run = false;
 	                continue;
@@ -236,7 +272,7 @@ public class MainClass {
 
 	static void runServerForAndroid(Queries queries, Queries streamingQueries) {
 		ObjectOutputStream out = null;
-		try (ServerSocket providerSocket = new ServerSocket(4321, 10)) {
+		try (ServerSocket providerSocket = new ServerSocket(4322, 10)) {
 			while (true) {
 				System.out.println("Socket data server is running...");
 				Socket connection = providerSocket.accept();

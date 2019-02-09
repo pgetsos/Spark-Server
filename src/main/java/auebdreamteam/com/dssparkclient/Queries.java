@@ -172,9 +172,13 @@ class Queries {
                 .and(col(DATE).equalTo(date))
                 .and(col("Hour").equalTo(hour))
                 .and(col(STOP_ID).equalTo(stopID)))
-                //.groupBy(LINE_ID).count()
+//                .withWatermark("DateTime", "1 minute")
+//                .groupBy(LINE_ID)
+//                .count()
                 /*.sort(LINE_ID)*/
-                .writeStream().format("console").start();
+                .writeStream()
+//                .outputMode("complete")
+                .format("console").start();
 
 
         try {
