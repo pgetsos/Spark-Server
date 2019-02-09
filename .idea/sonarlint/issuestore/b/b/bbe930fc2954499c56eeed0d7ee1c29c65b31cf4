@@ -1,11 +1,0 @@
-
-Zsquid:S2696ˆ"6Make the enclosing method "static" or remove this set.(Í÷½ôøÿÿÿÿ8‚¿ñœ‡-
-Qsquid:S1068".Remove this unused "VEHICLE_ID" private field.(»÷ÿ˜øÿÿÿÿ8‚¿ñœ‡-
-|squid:S1192·"XUse already-defined constant 'VEHICLE_JOURNEY_ID' instead of duplicating its value here.(í÷Ìíøÿÿÿÿ8‚¿ñœ‡-
-nsquid:S1192Â"JDefine a constant instead of duplicating this literal "timestamp" 5 times.(ºÄ¾³üÿÿÿÿ8‚¿ñœ‡-
-vsquid:S1450†"RRemove the "map" field and declare it as a local variable in the relevant methods.(ÎÃşíşÿÿÿÿ8‚¿ñœ‡-
-isquid:S1192["KDefine a constant instead of duplicating this literal "2013-01-16" 8 times.(Øİ“8‚¿ñœ‡-
-usquid:S00117l"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÒ¢±øÿÿÿÿ8‚¿ñœ‡-
-Jsquid:S1172¢"&Remove these unused method parameters.(Ñ¹§ùÿÿÿÿ8‚¿ñœ‡-
-vsquid:S00117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÈ”äşÿÿÿÿ8‚¿ñœ‡-
-Gsquid:S1148®"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ßÚ·î‡-

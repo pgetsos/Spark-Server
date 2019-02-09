@@ -1,41 +1,0 @@
-
-dsquid:S1075P"ARefactor your code to get this URI from a customizable parameter.(Œ§¿‹úÿÿÿÿ8‹Ó·î‡-
-dsquid:S1075Q"ARefactor your code to get this URI from a customizable parameter.(Ï¸ßûÿÿÿÿ8‹Ó·î‡-
-_squid:S1075R"ARefactor your code to get this URI from a customizable parameter.(§‡‘‹8‹Ó·î‡-
-hsquid:S1192D"JDefine a constant instead of duplicating this literal "longitude" 3 times.(„ Úü8‹Ó·î‡-
-lsquid:S1192B"IDefine a constant instead of duplicating this literal "operator" 3 times.(Á²ªçúÿÿÿÿ8‹Ó·î‡-
-jsquid:S1192z"GDefine a constant instead of duplicating this literal "value" 15 times.(‰ó´ºúÿÿÿÿ8‹Ó·î‡-
-hsquid:S1192<"JDefine a constant instead of duplicating this literal "timestamp" 4 times.(›ÖÏ¯8‹Ó·î‡-
-esquid:S1192I"GDefine a constant instead of duplicating this literal "stopID" 3 times.(åÏ¸³8‹Ó·î‡-
-esquid:S1192J"GDefine a constant instead of duplicating this literal "atStop" 3 times.(£Ÿõå8‹Ó·î‡-
-msquid:S1192”"IDefine a constant instead of duplicating this literal "DateTime" 3 times.(‚ØŠ‡úÿÿÿÿ8‹Ó·î‡-
-isquid:S1192F"FDefine a constant instead of duplicating this literal "delay" 3 times.(åı¼’úÿÿÿÿ8‹Ó·î‡-
-lsquid:S1192E"IDefine a constant instead of duplicating this literal "latitude" 3 times.(ä«™ıûÿÿÿÿ8‹Ó·î‡-
-jsquid:S1192="GDefine a constant instead of duplicating this literal "lineID" 3 times.(ÚšµÅùÿÿÿÿ8‹Ó·î‡-
-msquid:S1192>"JDefine a constant instead of duplicating this literal "direction" 3 times.(Ë°©”üÿÿÿÿ8‹Ó·î‡-
-esquid:S1192G"HDefine a constant instead of duplicating this literal "blockID" 3 times.(°¬ˆ08‹Ó·î‡-
-hsquid:S1192?"JDefine a constant instead of duplicating this literal "journeyID" 3 times.(Îıéæ8‹Ó·î‡-
-osquid:S1192A"QDefine a constant instead of duplicating this literal "vehicleJourneyID" 3 times.(Ú°äí8‹Ó·î‡-
-msquid:S1192H"JDefine a constant instead of duplicating this literal "vehicleID" 3 times.(Ë¸ Şøÿÿÿÿ8‹Ó·î‡-
-msquid:S1192@"JDefine a constant instead of duplicating this literal "timeFrame" 3 times.(Èö©Èıÿÿÿÿ8‹Ó·î‡-
-isquid:S1192C"KDefine a constant instead of duplicating this literal "congestion" 3 times.(Ş®åù8‹Ó·î‡-
-‚squid:S1192¬"^Define a constant instead of duplicating this literal "Wrong input, please try again" 5 times.(÷´à‚üÿÿÿÿ8‹Ó·î‡-
-qsquid:S20952"NUse try-with-resources or close this "JavaSparkContext" in a "finally" clause.(¸á‚Ğùÿÿÿÿ8‹Ó·î‡-
-|
-squid:S135¤"YReduce the total number of break and continue statements in this loop to use at most one.(ÑÒŸ¹øÿÿÿÿ8‹Ó·î‡-
-isquid:CommentedOutCodeLine5"<This block of commented-out lines of code should be removed.(ŸÔ€8‹Ó·î‡-
-nsquid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(‹ÂÊÆùÿÿÿÿ8‹Ó·î‡-
-nsquid:CommentedOutCodeLine["<This block of commented-out lines of code should be removed.(ã®ñÎùÿÿÿÿ8‹Ó·î‡-
-isquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(  «ó8‹Ó·î‡-
-nsquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(ªûßÇúÿÿÿÿ8‹Ó·î‡-
-isquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(¨Ã‚ş8‹Ó·î‡-
-isquid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(ÔßõÒ8‹Ó·î‡-
-isquid:CommentedOutCodeLinek"<This block of commented-out lines of code should be removed.(ƒ«Ô³8‹Ó·î‡-
-jsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(šÕ¯£8‹Ó·î‡-
-osquid:CommentedOutCodeLine˜"<This block of commented-out lines of code should be removed.(ğÑ¸Ùùÿÿÿÿ8‹Ó·î‡-
-osquid:CommentedOutCodeLineÆ"<This block of commented-out lines of code should be removed.(‚Ç¬Êıÿÿÿÿ8‹Ó·î‡-
-Lsquid:S1481P")Remove this unused "path" local variable.(Œ§¿‹úÿÿÿÿ8‹Ó·î‡-
-Hsquid:S1481R"*Remove this unused "path3" local variable.(§‡‘‹8‹Ó·î‡-
-Wsquid:S1854R"9Remove this useless assignment to local variable "path3".(§‡‘‹8‹Ó·î‡-
-[squid:S1854P"8Remove this useless assignment to local variable "path".(Œ§¿‹úÿÿÿÿ8‹Ó·î‡-
-qsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ÌÁÑ8‹Ó·î‡-

@@ -2,6 +2,7 @@ package auebdreamteam.com.dssparkclient;
 
 import auebdreamteam.com.dssparkclient.entities.BaseQueryClass;
 import auebdreamteam.com.dssparkclient.entities.BusesDelayQuery;
+import auebdreamteam.com.dssparkclient.entities.MapPoint;
 import auebdreamteam.com.dssparkclient.entities.MapQuery;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -16,6 +17,7 @@ import org.apache.spark.sql.types.StructType;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.List;
 
 import static org.apache.spark.sql.functions.*;
 
@@ -75,7 +77,7 @@ public class MainClass {
         String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
         String path3 = "/Users/jason/Desktop/dataset/"; // Iasonas
 
-        Dataset<Row> df = sparkSession.read().schema(schema).csv(path2)
+        Dataset<Row> df = sparkSession.read().schema(schema).csv(path)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
@@ -285,7 +287,10 @@ public class MainClass {
 					BaseQueryClass objectReceived = (BaseQueryClass) in.readObject();
 					System.out.println("Item read!");
 					if (objectReceived instanceof MapQuery) {
-						streamingQueries.busesPerArea();
+						MapQuery mq = (MapQuery) objectReceived;
+						List<MapPoint> toReturn = queries.busesAtStopInAreaBatch(mq.getEndingLatCoordinate(), mq.getStartingLongCoordinate(), mq.getStartingLatCoordinate(), mq.getEndingLongCoordinate());
+						//List<MapPoint> toReturn = queries.busesAtStopInAreaBatch(53.347, -6.27, 53.348, -6.26);
+						out.writeObject(toReturn);
 					} else if (objectReceived instanceof BusesDelayQuery){
 						System.out.println("DOYLEVEI! YOUHOOOO!");
 						BusesDelayQuery query = (BusesDelayQuery) objectReceived;

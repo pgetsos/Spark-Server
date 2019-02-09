@@ -1,9 +1,0 @@
-
-Tsquid:S1197O"8Move the array designator from the variable to the type.(¡þÏÖøÿÿÿÿ
-usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÆäîÕùÿÿÿÿ
-Xsquid:S1075!"ARefactor your code to get this URI from a customizable parameter.(Ì¡´Å
-:squid:S1148K"#Use a logger to log this exception.(äµ£¬
-isquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(òº›‹8ÈÃ·î‡-
-nsquid:CommentedOutCodeLine;"<This block of commented-out lines of code should be removed.(è„èÿÿÿÿÿ8ÈÃ·î‡-
-Fsquid:S1148/"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÈÃ·î‡-
-Asquid:S1148>"#Use a logger to log this exception.(äµ£¬8ÈÃ·î‡-

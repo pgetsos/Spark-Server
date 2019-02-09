@@ -6,7 +6,9 @@
 
 package auebdreamteam.com.dssparkclient.entities;
 
-public class MapPoint {
+import java.io.Serializable;
+
+public class MapPoint implements Serializable {
 	private double LongCoordinate;
 	private double LatCoordinate;
 

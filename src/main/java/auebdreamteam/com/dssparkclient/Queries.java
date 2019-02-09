@@ -1,13 +1,12 @@
 package auebdreamteam.com.dssparkclient;
 
+import auebdreamteam.com.dssparkclient.entities.MapPoint;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema;
 import org.apache.spark.sql.streaming.StreamingQuery;
 import org.apache.spark.sql.streaming.StreamingQueryException;
 
-import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.*;
 
 import static org.apache.spark.sql.functions.*;
@@ -190,12 +189,20 @@ class Queries {
 
     // Query #5
     // In batch processing "last hour" is not feasible, so we run the query for every hour of each day.
-    void busesAtStopInAreaBatch(double minLatitude, double minLongitude, double maxLatitude, double maxLongitude){
-        df.filter(df.col(AT_STOP).equalTo(1)
+    List<MapPoint> busesAtStopInAreaBatch(double minLatitude, double minLongitude, double maxLatitude, double maxLongitude){
+        Dataset tempDataset = df.filter(df.col(AT_STOP).equalTo(1)
                 .and(df.col(LAT).gt(minLatitude)).and(df.col(LONG).gt(minLongitude))
                 .and(df.col(LAT).lt(maxLatitude)).and(df.col(LONG).lt(maxLongitude)))
-                .dropDuplicates("vehicleJourneyID", STOP_ID) // Counting each stop during a journey only once.
-                .groupBy(DATE, "Hour").count().sort(DATE,"Hour").show();
+                .dropDuplicates("vehicleJourneyID", STOP_ID); // Counting each stop during a journey only once.
+        List<MapPoint> mapPoints = new ArrayList<>();
+        List<GenericRowWithSchema> tempList = tempDataset.collectAsList();
+        for (GenericRowWithSchema genericRowWithSchema : tempList) {
+            mapPoints.add(new MapPoint(genericRowWithSchema.getDouble(8), genericRowWithSchema.getDouble(9)));
+        }
+
+        tempDataset.groupBy(DATE, "Hour").count().sort(DATE,"Hour").show();
+
+        return mapPoints;
     }
 
     // Query #5 Streaming
