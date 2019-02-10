@@ -1,10 +1,10 @@
 
-?squid:S1148$"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-?squid:S1148C"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-bsquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(®Ã¥ó
-Qsquid:S1161)":Add the "@Override" annotation above this method signature(“–ýþ
-:squid:S1148F"#Use a logger to log this exception.(äµ£¬
 `squid:UselessImportCheck"<Remove this unused import 'org.spark_project.dmg.pmml.True'.(„™øÙ
-usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÆäîÕùÿÿÿÿ
-Xsquid:S10750"ARefactor your code to get this URI from a customizable parameter.(Ì¡´Å
 \squid:S20954"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ö±§®
+?squid:S1148$"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+:squid:S1148F"#Use a logger to log this exception.(äµ£¬
+bsquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(®Ã¥ó
+Xsquid:S10750"ARefactor your code to get this URI from a customizable parameter.(Ì¡´Å
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÆäîÕùÿÿÿÿ
+?squid:S1148C"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+Qsquid:S1161)":Add the "@Override" annotation above this method signature(“–ýþ

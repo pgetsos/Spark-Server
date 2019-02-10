@@ -1,21 +1,21 @@
 
-[squid:S1197m"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ8™’Ïî‡-
-nsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(ú‘İşÿÿÿÿ8œà·î‡-
-nsquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8œà·î‡-
-nsquid:CommentedOutCodeLine$"<This block of commented-out lines of code should be removed.(ÄâŸùüÿÿÿÿ8œà·î‡-
+_squid:S1075<"ARefactor your code to get this URI from a customizable parameter.(Ì¡´Å8ç­ª’-
+isquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(òº›‹8ç­ª’-
+Asquid:S1148h"#Use a logger to log this exception.(äµ£¬8™’Ïî‡-
+Fsquid:S1148\"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8è­ª’-
 Asquid:S1148c"#Use a logger to log this exception.(äµ£¬8™’Ïî‡-
+nsquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8œà·î‡-
+psquid:S3776-"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(’ñğ8œà·î‡-
 squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ôÀª~8œà·î‡-
-isquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(®Ã¥ó8œà·î‡-
 Msquid:S2093."*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8œà·î‡-
+isquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(åëìº8œà·î‡-
+isquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(®Ã¥ó8œà·î‡-
+nsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(ú‘İşÿÿÿÿ8œà·î‡-
+nsquid:CommentedOutCodeLine$"<This block of commented-out lines of code should be removed.(ÄâŸùüÿÿÿÿ8œà·î‡-
+Xsquid:S1141;"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8è­ª’-
+csquid:S2095@"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ö±§®8ç­ª’-
+|squid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÆäîÕùÿÿÿÿ8œà·î‡-
+[squid:S1197m"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ8™’Ïî‡-
 nsquid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(€Äà˜øÿÿÿÿ8œà·î‡-
 isquid:CommentedOutCodeLine5"<This block of commented-out lines of code should be removed.(—Ó¹8œà·î‡-
-psquid:S3776-"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(’ñğ8œà·î‡-
-isquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(åëìº8œà·î‡-
-|squid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÆäîÕùÿÿÿÿ8œà·î‡-
-Asquid:S1148h"#Use a logger to log this exception.(äµ£¬8™’Ïî‡-
-_squid:S1075<"ARefactor your code to get this URI from a customizable parameter.(Ì¡´Å8ç­ª’-
-csquid:S2095@"EUse try-with-resources or close this "Scanner" in a "finally" clause.(ö±§®8ç­ª’-
-isquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(òº›‹8ç­ª’-
 nsquid:CommentedOutCodeLineQ"<This block of commented-out lines of code should be removed.(ë§ç¶ûÿÿÿÿ8è­ª’-
-Xsquid:S1141;"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8è­ª’-
-Fsquid:S1148\"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8è­ª’-

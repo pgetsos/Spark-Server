@@ -17,6 +17,7 @@ import org.apache.spark.sql.types.StructType;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Collections;
 import java.util.List;
 
 import static org.apache.spark.sql.functions.*;
@@ -237,10 +238,7 @@ public class MainClass {
 						System.out.println("Wrong input, please try again");
 						continue;
 					}
-
 	                break;
-
-
 				case 8:
 					try {
 						System.out.println("Choose minimum latitude");
@@ -259,7 +257,6 @@ public class MainClass {
 						continue;
 					}
 					break;
-
 	            case 9:
 	                run = false;
 	                continue;
@@ -283,24 +280,22 @@ public class MainClass {
 				out = new ObjectOutputStream(connection.getOutputStream());
 
 				try {
-					System.out.println("Item read!");
 					BaseQueryClass objectReceived = (BaseQueryClass) in.readObject();
 					System.out.println("Item read!");
 					if (objectReceived instanceof MapQuery) {
+						System.out.println("MapQuery received!");
 						MapQuery mq = (MapQuery) objectReceived;
 						List<MapPoint> toReturn = queries.busesAtStopInAreaBatch(mq.getEndingLatCoordinate(), mq.getStartingLongCoordinate(), mq.getStartingLatCoordinate(), mq.getEndingLongCoordinate());
-						//List<MapPoint> toReturn = queries.busesAtStopInAreaBatch(53.347, -6.27, 53.348, -6.26);
 						out.writeObject(toReturn);
 					} else if (objectReceived instanceof BusesDelayQuery){
-						System.out.println("DOYLEVEI! YOUHOOOO!");
+						System.out.println("BusesDelayQuery received!");
 						BusesDelayQuery query = (BusesDelayQuery) objectReceived;
-						queries.timeToStop(query.getLineID(), query.getDate(), query.getStopID());
+						String toReturn = queries.timeToStop(query.getLineID(), query.getDate(), query.getStopID());
+						out.writeObject(Collections.singletonList(toReturn));
 					}
 				} catch (ClassNotFoundException e) {
 					out.writeInt(0);
 				}
-
-
 			}
 		} catch (IOException ioException) {
 			ioException.printStackTrace();

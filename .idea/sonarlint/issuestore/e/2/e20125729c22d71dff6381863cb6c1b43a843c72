@@ -1,14 +1,12 @@
 
-Wsquid:UselessImportCheck
-",Remove this unused import 'java.net.Socket'.(­‡àú8¹£ï—ˆ-
-nsquid:S1192à"JDefine a constant instead of duplicating this literal "timestamp" 5 times.(ºÄ¾³üÿÿÿÿ8‚¿ñœ‡-
-usquid:S00117l"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÒ¢±øÿÿÿÿ8‚¿ñœ‡-
-vsquid:S00117ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÈ”äşÿÿÿÿ8‚¿ñœ‡-
-isquid:S1192["KDefine a constant instead of duplicating this literal "2013-01-16" 8 times.(Øİ“8‚¿ñœ‡-
-Qsquid:S1068".Remove this unused "VEHICLE_ID" private field.(»÷ÿ˜øÿÿÿÿ8‚¿ñœ‡-
-Zsquid:S2696ˆ"6Make the enclosing method "static" or remove this set.(Í÷½ôøÿÿÿÿ8‚¿ñœ‡-
-vsquid:S1450†"RRemove the "map" field and declare it as a local variable in the relevant methods.(ÎÃşíşÿÿÿÿ8‚¿ñœ‡-
-bsquid:UselessImportCheck	"2Remove this unused import 'java.net.ServerSocket'.(ĞúÙÿÿÿÿÿ8¹£ï—ˆ-
-|squid:S1192Å"XUse already-defined constant 'VEHICLE_JOURNEY_ID' instead of duplicating its value here.(í÷Ìíøÿÿÿÿ8Ò‚ª’-
-Gsquid:S1148»"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ò‚ª’-
-Gsquid:S1148Õ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ò‚ª’-
+usquid:S00117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÒ¢±øÿÿÿÿ8‚¿ñœ‡-
+wsquid:S1192Ä"XUse already-defined constant 'VEHICLE_JOURNEY_ID' instead of duplicating its value here.(‘Ä´±8Âù‘¹-
+isquid:S1192Z"KDefine a constant instead of duplicating this literal "2013-01-16" 8 times.(Øİ“8‚¿ñœ‡-
+bsquid:S1155ö">Use isEmpty() to check whether the collection is empty or not.(€ä®ùÿÿÿÿ8Û—¾-
+nsquid:S1192ç"JDefine a constant instead of duplicating this literal "timestamp" 5 times.(ºÄ¾³üÿÿÿÿ8‚¿ñœ‡-
+Qsquid:S1068".Remove this unused "VEHICLE_ID" private field.(»÷ÿ˜øÿÿÿÿ8‚¿ñœ‡-
+Zsquid:S2696‡"6Make the enclosing method "static" or remove this set.(Í÷½ôøÿÿÿÿ8‚¿ñœ‡-
+vsquid:S1450…"RRemove the "map" field and declare it as a local variable in the relevant methods.(ÎÃşíşÿÿÿÿ8‚¿ñœ‡-
+vsquid:S00117î"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓÈ”äşÿÿÿÿ8‚¿ñœ‡-
+Gsquid:S1148º"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ò‚ª’-
+Gsquid:S1148Ü"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ò‚ª’-

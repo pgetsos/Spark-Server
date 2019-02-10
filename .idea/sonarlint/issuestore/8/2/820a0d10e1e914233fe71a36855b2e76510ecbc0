@@ -1,43 +1,46 @@
 
-Bsquid:S1148­"#Use a logger to log this exception.(äµ£¬8Óï—ˆ-
-osquid:S1192;"QDefine a constant instead of duplicating this literal "vehicleJourneyID" 3 times.(Ú°äí8‹Ó·î‡-
-dsquid:S1075J"ARefactor your code to get this URI from a customizable parameter.(Œ§¿‹úÿÿÿÿ8‹Ó·î‡-
-msquid:S1192:"JDefine a constant instead of duplicating this literal "timeFrame" 3 times.(Èö©Èıÿÿÿÿ8‹Ó·î‡-
-osquid:S1192¶"PDefine a constant instead of duplicating this literal "Choose a stopID" 3 times.(ó„’’8ú£ª’-
-msquid:S1192B"JDefine a constant instead of duplicating this literal "vehicleID" 3 times.(Ë¸ Şøÿÿÿÿ8‹Ó·î‡-
-jsquid:S11927"GDefine a constant instead of duplicating this literal "lineID" 3 times.(ÚšµÅùÿÿÿÿ8‹Ó·î‡-
-squid:S1192²"bDefine a constant instead of duplicating this literal "Choose a date (YYYY-MM-DD format)" 3 times.(Óéäí8ú£ª’-
-jsquid:S1192t"GDefine a constant instead of duplicating this literal "value" 15 times.(‰ó´ºúÿÿÿÿ8ú£ª’-
-Ysquid:S1141›"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Óï—ˆ-
-isquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(ÔßõÒ8ú£ª’-
-qsquid:S2095,"NUse try-with-resources or close this "JavaSparkContext" in a "finally" clause.(¸á‚Ğùÿÿÿÿ8‹Ó·î‡-
-esquid:S1192C"GDefine a constant instead of duplicating this literal "stopID" 3 times.(åÏ¸³8‹Ó·î‡-
-nsquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(‹ÂÊÆùÿÿÿÿ8‹Ó·î‡-
-lsquid:S1192?"IDefine a constant instead of duplicating this literal "latitude" 3 times.(ä«™ıûÿÿÿÿ8‹Ó·î‡-
-Msquid:S1481K"*Remove this unused "path2" local variable.(Ï¸ßûÿÿÿÿ8è•«’-
-Wsquid:S1854L"9Remove this useless assignment to local variable "path3".(§‡‘‹8‹Ó·î‡-
-msquid:S1192ˆ"IDefine a constant instead of duplicating this literal "DateTime" 6 times.(‚ØŠ‡úÿÿÿÿ8ú£ª’-
-dsquid:S1075K"ARefactor your code to get this URI from a customizable parameter.(Ï¸ßûÿÿÿÿ8‹Ó·î‡-
-hsquid:S11929"JDefine a constant instead of duplicating this literal "journeyID" 3 times.(Îıéæ8‹Ó·î‡-
-isquid:S1192@"FDefine a constant instead of duplicating this literal "delay" 3 times.(åı¼’úÿÿÿÿ8‹Ó·î‡-
-nsquid:CommentedOutCodeLineZ"<This block of commented-out lines of code should be removed.(ªûßÇúÿÿÿÿ8ú£ª’-
-isquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(¨Ã‚ş8ú£ª’-
-hsquid:S1192>"JDefine a constant instead of duplicating this literal "longitude" 3 times.(„ Úü8‹Ó·î‡-
-_squid:S1075L"ARefactor your code to get this URI from a customizable parameter.(§‡‘‹8‹Ó·î‡-
-isquid:S1192="KDefine a constant instead of duplicating this literal "congestion" 3 times.(Ş®åù8‹Ó·î‡-
-esquid:S1192A"HDefine a constant instead of duplicating this literal "blockID" 3 times.(°¬ˆ08‹Ó·î‡-
-nsquid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(ã®ñÎùÿÿÿÿ8ú£ª’-
-msquid:S11928"JDefine a constant instead of duplicating this literal "direction" 3 times.(Ë°©”üÿÿÿÿ8‹Ó·î‡-
-\squid:S1854K"9Remove this useless assignment to local variable "path2".(Ï¸ßûÿÿÿÿ8è•«’-
-‚squid:S1192Ÿ"^Define a constant instead of duplicating this literal "Wrong input, please try again" 7 times.(÷´à‚üÿÿÿÿ8ú£ª’-
-jsquid:CommentedOutCodeLine¸"<This block of commented-out lines of code should be removed.(‹·€Ÿ8ú£ª’-
-hsquid:S11926"JDefine a constant instead of duplicating this literal "timestamp" 5 times.(›ÖÏ¯8‹Ó·î‡-
-isquid:CommentedOutCodeLine/"<This block of commented-out lines of code should be removed.(ŸÔ€8‹Ó·î‡-
-Hsquid:S1481L"*Remove this unused "path3" local variable.(§‡‘‹8‹Ó·î‡-
+esquid:S1192G"GDefine a constant instead of duplicating this literal "atStop" 3 times.(£Ÿõå8‹Ó·î‡-
+isquid:CommentedOutCodeLine_"<This block of commented-out lines of code should be removed.(¨Ã‚ş8Àù‘¹-
+Msquid:S1481N"*Remove this unused "path2" local variable.(Ï¸ßûÿÿÿÿ8è•«’-
+isquid:S1192C"FDefine a constant instead of duplicating this literal "delay" 3 times.(åı¼’úÿÿÿÿ8‹Ó·î‡-
+squid:S1192µ"bDefine a constant instead of duplicating this literal "Choose a date (YYYY-MM-DD format)" 3 times.(Óéäí8ú£ª’-
+msquid:S1192;"JDefine a constant instead of duplicating this literal "direction" 3 times.(Ë°©”üÿÿÿÿ8‹Ó·î‡-
+isquid:CommentedOutCodeLine["<This block of commented-out lines of code should be removed.(  «ó8ú£ª’-
+jsquid:S1192:"GDefine a constant instead of duplicating this literal "lineID" 3 times.(ÚšµÅùÿÿÿÿ8‹Ó·î‡-
+jsquid:CommentedOutCodeLine»"<This block of commented-out lines of code should be removed.(‹·€Ÿ8ú£ª’-
 |
-squid:S135—"YReduce the total number of break and continue statements in this loop to use at most one.(ÑÒŸ¹øÿÿÿÿ8ú£ª’-
-lsquid:S1192<"IDefine a constant instead of duplicating this literal "operator" 3 times.(Á²ªçúÿÿÿÿ8‹Ó·î‡-
-isquid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(  «ó8ú£ª’-
-isquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(ƒ«Ô³8ú£ª’-
-esquid:S1192D"GDefine a constant instead of duplicating this literal "atStop" 3 times.(£Ÿõå8‹Ó·î‡-
-psquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Çµí‘8ú£ª’-
+squid:S135š"YReduce the total number of break and continue statements in this loop to use at most one.(ÑÒŸ¹øÿÿÿÿ8ú£ª’-
+msquid:S1192‹"IDefine a constant instead of duplicating this literal "DateTime" 6 times.(‚ØŠ‡úÿÿÿÿ8ú£ª’-
+lsquid:S1192?"IDefine a constant instead of duplicating this literal "operator" 3 times.(Á²ªçúÿÿÿÿ8‹Ó·î‡-
+hsquid:S11929"JDefine a constant instead of duplicating this literal "timestamp" 5 times.(›ÖÏ¯8‹Ó·î‡-
+‚squid:S1192¢"^Define a constant instead of duplicating this literal "Wrong input, please try again" 7 times.(÷´à‚üÿÿÿÿ8ú£ª’-
+isquid:S1192@"KDefine a constant instead of duplicating this literal "congestion" 3 times.(Ş®åù8‹Ó·î‡-
+Wsquid:S1854O"9Remove this useless assignment to local variable "path3".(§‡‘‹8‹Ó·î‡-
+esquid:S1192F"GDefine a constant instead of duplicating this literal "stopID" 3 times.(åÏ¸³8‹Ó·î‡-
+Hsquid:S1481O"*Remove this unused "path3" local variable.(§‡‘‹8‹Ó·î‡-
+esquid:S2118¡"AMake the "java.util.List" class "Serializable" or don't write it.(åĞª©ûÿÿÿÿ8–‡ø»-
+isquid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(ƒ«Ô³8ú£ª’-
+dsquid:S1075N"ARefactor your code to get this URI from a customizable parameter.(Ï¸ßûÿÿÿÿ8‹Ó·î‡-
+psquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Çµí‘8ú£ª’-
+hsquid:S1192A"JDefine a constant instead of duplicating this literal "longitude" 3 times.(„ Úü8‹Ó·î‡-
+dsquid:S1075M"ARefactor your code to get this URI from a customizable parameter.(Œ§¿‹úÿÿÿÿ8‹Ó·î‡-
+Bsquid:S1148­"#Use a logger to log this exception.(äµ£¬8–‡ø»-
+nsquid:CommentedOutCodeLine]"<This block of commented-out lines of code should be removed.(ªûßÇúÿÿÿÿ8ú£ª’-
+esquid:S1192D"HDefine a constant instead of duplicating this literal "blockID" 3 times.(°¬ˆ08‹Ó·î‡-
+isquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(ŸÔ€8‹Ó·î‡-
+osquid:S1192¹"PDefine a constant instead of duplicating this literal "Choose a stopID" 3 times.(ó„’’8ú£ª’-
+Vsquid:S1172"7Remove this unused method parameter "streamingQueries".(£²´æ8Àù‘¹-
+hsquid:S1192<"JDefine a constant instead of duplicating this literal "journeyID" 3 times.(Îıéæ8‹Ó·î‡-
+lsquid:S1192B"IDefine a constant instead of duplicating this literal "latitude" 3 times.(ä«™ıûÿÿÿÿ8‹Ó·î‡-
+jsquid:S1192w"GDefine a constant instead of duplicating this literal "value" 15 times.(‰ó´ºúÿÿÿÿ8ú£ª’-
+nsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(‹ÂÊÆùÿÿÿÿ8‹Ó·î‡-
+Ysquid:S1141š"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Óï—ˆ-
+qsquid:S2095/"NUse try-with-resources or close this "JavaSparkContext" in a "finally" clause.(¸á‚Ğùÿÿÿÿ8‹Ó·î‡-
+isquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(ÔßõÒ8ú£ª’-
+nsquid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(ã®ñÎùÿÿÿÿ8ú£ª’-
+esquid:S2118¦"AMake the "java.util.List" class "Serializable" or don't write it.(Ëì÷½şÿÿÿÿ8–‡ø»-
+msquid:S1192="JDefine a constant instead of duplicating this literal "timeFrame" 3 times.(Èö©Èıÿÿÿÿ8‹Ó·î‡-
+_squid:S1075O"ARefactor your code to get this URI from a customizable parameter.(§‡‘‹8Àù‘¹-
+\squid:S1854N"9Remove this useless assignment to local variable "path2".(Ï¸ßûÿÿÿÿ8è•«’-
+msquid:S1192E"JDefine a constant instead of duplicating this literal "vehicleID" 3 times.(Ë¸ Şøÿÿÿÿ8‹Ó·î‡-
+osquid:S1192>"QDefine a constant instead of duplicating this literal "vehicleJourneyID" 3 times.(Ú°äí8‹Ó·î‡-

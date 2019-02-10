@@ -222,7 +222,7 @@ class Queries {
     }
 
     // Query #6
-    void timeToStop(String lineID, String timeFrame, int stopID){
+    String timeToStop(String lineID, String timeFrame, int stopID){
         Dataset<Row> tempInitial = df.filter(df.col(DATE).equalTo(timeFrame)
                 .and(df.col(LINE_ID).equalTo(lineID)));
 
@@ -241,8 +241,14 @@ class Queries {
                 .divide(1000000))
                 .divide(60));
 
-        double averageTIme = average_time.agg(avg(average_time.col("diffTime"))).collectAsList().get(0).getDouble(0);
+        List<Row> tempList = average_time.agg(avg(average_time.col("diffTime"))).collectAsList();
+        double averageTIme = 0;
+        if(tempList.size() > 0 && tempList.get(0).size() > 0) {
+            averageTIme = tempList.get(0).getDouble(0);
+        }
 
-        System.out.println(String.format("Time to bus stop %d for line %s, at date %s: %f minutes", stopID, lineID, timeFrame, averageTIme));
+        String toReturn = String.format("Time to bus stop %d for line %s, at date %s: %f minutes", stopID, lineID, timeFrame, averageTIme);
+        System.out.println(toReturn);
+        return toReturn;
     }
 }
