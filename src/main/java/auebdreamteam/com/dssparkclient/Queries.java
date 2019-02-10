@@ -251,4 +251,28 @@ class Queries {
         System.out.println(toReturn);
         return toReturn;
     }
+
+
+    // Query #7
+    void delayDatesPerLine(){
+        //Dataset<Row> averageDelayPerLine = df.groupBy("lineID").avg("delay").sort("avg(delay)");
+        //averageDelayPerLine.show();
+
+        //Dataset<Row> delayed = df.filter(col("delay").gt(averageDelayPerLine.col("avg(delay)")).and(col("lineID")).equalTo(averageDelayPerLine.col("lineID")));
+
+        double avgDelay = (double) df.agg(avg(col("delay"))).collectAsList().get(0).get(0);
+        System.out.println(avgDelay);
+
+        Dataset<Row> avgDelayPerLineAndDate = df.groupBy(col("lineID"),  col("Date")).avg("delay");
+        avgDelayPerLineAndDate.filter(col("avg(delay)").gt(avgDelay)).sort("lineID").filter(col("lineID").gt(0)).show();
+
+        //Dataset<Row> delayed = df.filter(col("delay").gt(avgDelay)).groupBy(col("lineID"), col("Date")).count().sort(col("lineID")).filter(col("lineID").gt(0));
+
+        //delayed.show();
+
+    }
+    // Bonus operator delay query.
+    void bonusOperatorDelay(){
+        df.groupBy(col("operator")).avg("delay").sort("avg(delay)").show();
+    }
 }

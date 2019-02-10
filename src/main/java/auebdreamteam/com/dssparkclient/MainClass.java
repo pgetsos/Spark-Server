@@ -78,7 +78,7 @@ public class MainClass {
         String path2 = "/media/spiros/Data/SparkDataset/"; // Spiros
         String path3 = "/Users/jason/Desktop/dataset/"; // Iasonas
 
-        Dataset<Row> df = sparkSession.read().schema(schema).csv(path)
+        Dataset<Row> df = sparkSession.read().schema(schema).csv(path2)
                 .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
@@ -154,7 +154,8 @@ public class MainClass {
 	    while(run) {
 	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	        System.out.println("Choose a query:\n0) Print schema\n1) Buses per Area\n2) Congested Buses per Day per Hour per Area\n3) Stops per line\n" +
-	                "4) Buses at Stop\n5) Buses at Stop in Area\n6) Time to Stop\n7) Buses at Stop Streaming\n8) Buses at Stop in Area Streaming\n9) Exit");
+	                "4) Buses at Stop\n5) Buses at Stop in Area\n6) Time to Stop\n7) Buses at Stop Streaming\n8) Buses at Stop in Area Streaming\n9) Average operator delay\n10) Bonus - Dates with " +
+					"greater delay than average\n11) Exit");
 	        int a;
 	        try {
 	            a = Integer.parseInt(br.readLine());
@@ -257,7 +258,14 @@ public class MainClass {
 						continue;
 					}
 					break;
-	            case 9:
+				case 9:
+					queries.bonusOperatorDelay();
+					break;
+
+				case 10:
+					queries.delayDatesPerLine();
+					break;
+	            case 11:
 	                run = false;
 	                continue;
 	            default:
