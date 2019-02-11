@@ -150,6 +150,8 @@ public class MainClass {
 
 	    new Thread(() -> runServerForAndroid(queries, streamingQueries)).start();
 
+        new Thread(() -> new DataSocketServer().openServer()).start();
+
 	    boolean run = true;
 	    while(run) {
 	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

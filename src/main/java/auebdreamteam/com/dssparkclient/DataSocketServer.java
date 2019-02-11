@@ -62,7 +62,7 @@ public class DataSocketServer {
 
                     for (String filename : filenames){
                         Scanner scanner = new Scanner(new File("/media/spiros/Data/SparkDataset/"+filename));
-                        System.out.print("Printing lines...");
+//                        System.out.print("Printing lines...");
 //                        scanner.useDelimiter(",");
                         int counter = 0;
                         StringBuilder sb = new StringBuilder();
@@ -76,7 +76,7 @@ public class DataSocketServer {
 
                                 out.print(sb.toString().replaceAll("[^\\p{ASCII}]", ""));
                                 out.flush();
-                                System.out.println(sb.toString());
+//                                System.out.println(sb.toString());
                                 sb.setLength(0);
                                 //Thread.sleep(5000);
                             }
@@ -84,7 +84,7 @@ public class DataSocketServer {
                         if (sb.length() > 0) {
                             out.print(sb.toString());
                             out.flush();
-                            System.out.println(sb.toString());
+//                            System.out.println(sb.toString());
                             sb.setLength(0);
                         }
                         scanner.close();
