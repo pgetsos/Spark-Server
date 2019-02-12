@@ -83,27 +83,7 @@ public class MainClass {
                         "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
 
-//        Dataset<Row> dfStream = sparkSession.readStream().schema(schema).csv(path2)
-//                .toDF("timestamp","lineID", "direction", "journeyID", "timeFrame", "vehicleJourneyID", "operator",
-//                        "congestion", "longitude", "latitude", "delay", "blockID", "vehicleID", "stopID", "atStop");
 
-
-//        JavaReceiverInputDStream<String> lines = jssc.socketTextStream("localhost", 4321);
-
-//        JavaDStream<String> columns = lines.flatMap(x -> Arrays.asList(x.split(",")).iterator());
-
-//        lines.foreachRDD((VoidFunction<JavaRDD<String>>) rdd -> {
-//                    JavaRDD<Row> rowRDD = rdd.map((Function<String, Row>) msg -> {
-//                        Row row = RowFactory.create(msg);
-//                        return row;
-//                    });
-//                    //Create Schema
-//                    //StructType schema1 = DataTypes.createStructType(new StructField[] {DataTypes.createStructField("Message", DataTypes.StringType, true)});
-//                    //Get Spark 2.0 session
-//
-//                    Dataset<Row> msgDataFrame = sparkSession.createDataFrame(rowRDD, schema);
-//                    msgDataFrame.show();
-//                });
 
 
 
